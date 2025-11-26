@@ -1,0 +1,75 @@
+@font-face {
+            font-family: oswald-bold;
+            src: url(../font/Oswald-Bold.ttf);
+           }
+           @font-face {
+            font-family: oswald;
+            src: url(../font/Oswald-Regular.ttf);
+           }
+            @font-face {
+            font-family: oswald-light;
+            src: url(../font/Oswald-Light.ttf);
+           }
+           
+           * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                scroll-behavior: smooth;
+                font-family: oswald;
+            }
+
+            .logo {
+                max-width: 100px;
+            }
+
+            .navbar .nav-link {
+                padding: .5rem 1rem;
+            }
+
+            .section {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                padding: 80px 0;
+                scroll-margin-top: 80px;
+            }
+
+            
+
+            .s1 {
+                background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            }
+
+            .s2 {
+                background: #e0f7fa;
+            }
+
+            .s3 {
+                background: linear-gradient(135deg, #c3cfe2 0%, #f5f7fa 100%);
+            }
+
+            .s4 {
+                background: #ffe0e0;
+            }
+
+            .s5 {
+                background: #e8f5e9;
+            }
+
+            .hero-actions .btn {
+                min-width: 160px;
+            }
+            .card {
+                border: 0;
+                box-shadow: 0 6px 20px rgba(0,0,0,.08);
+            }
+            .card-title {
+                font-weight: 600;
+            }
+            .card:hover {
+                transform: translateY(-2px);
+                transition: transform .2s ease;
+            }

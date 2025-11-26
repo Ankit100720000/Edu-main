@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studiez - Deepen Your Learning Abilities</title>
+    <meta name="description"
+        content="Unlock your potential with world-class courses, certified instructors, and flexible learning hours.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.15/dist/lenis.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-background: #F5F3EE;
+            --color-foreground: #1F1F23;
+            --color-coral: #FF6B5A;
+            --color-mint: #5DD4B4;
+            --color-sunshine: #FFE66D;
+            --color-sky: #6B9EFF;
+            --color-muted: #8A8A8A;
+            --color-border: #E5E1D8;
+        }
+
+        html,
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-foreground);
+            overflow-x: hidden;
+            scroll-behavior: auto;
+        }
+
+        .text-highlight-coral {
+            background-color: rgba(255, 107, 90, 0.2);
+            padding: 0 0.5rem;
+            border-radius: 0.375rem;
+        }
+
+        .text-highlight-mint {
+            background-color: rgba(93, 212, 180, 0.2);
+            padding: 0 0.5rem;
+            border-radius: 0.375rem;
+        }
+
+        .text-highlight-sunshine {
+            background-color: rgba(255, 230, 109, 0.3);
+            padding: 0 0.5rem;
+            border-radius: 0.375rem;
+        }
+
+        .bg-coral {
+            background: linear-gradient(135deg, var(--color-coral), #FF8F82);
+        }
+
+        .bg-mint {
+            background: linear-gradient(135deg, var(--color-mint), #84EBD0);
+        }
+
+        .bg-sunshine {
+            background: linear-gradient(135deg, var(--color-sunshine), #FFEF9A);
+        }
+
+        .bg-sky {
+            background: linear-gradient(135deg, var(--color-sky), #8CB5FF);
+        }
+
+        .text-coral {
+            color: var(--color-coral);
+        }
+
+        .border-coral {
+            border-color: var(--color-coral);
+        }
+
+        .shadow-card {
+            box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-badge {
+            position: absolute;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
+            padding-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .underline-svg {
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 100%;
+            height: 8px;
+        }
+
+        .course-card {
+            /* transition: all 0.3s ease; */
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background-color: var(--color-foreground);
+            color: var(--color-background);
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-foreground);
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            border: 2px solid var(--color-foreground);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-foreground);
+            color: var(--color-background);
+        }
+
+        .btn-coral {
+            background-color: var(--color-coral);
+            color: white;
+        }
+
+        .btn-sky {
+            background-color: var(--color-sky);
+            color: white;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+        }
+
+        .star-icon {
+            width: 16px;
+            height: 16px;
+            fill: var(--color-sunshine);
+        }
+
+        .check-icon {
+            width: 16px;
+            height: 16px;
+            color: white;
+        }
+
+        /* .gallery-item {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        } */
+
+        /* .gallery-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        } */
+
+        /* Fallback to ensure gallery tiles have height even if aspect utilities are missing */
+        .aspect-square {
+            aspect-ratio: 1 / 1;
+        }
+
+        .gallery-grid {
+            grid-auto-rows: 1fr;
+        }
+
+        .award-card {
+            transition: all 0.3s ease;
+        }
+
+        .award-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .about-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-text {
+            line-height: 1.5 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b"
+        style="border-color: var(--color-border);">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl"
+                        style="background: linear-gradient(135deg, var(--color-coral), var(--color-sunshine));">
+                        📚
+                    </div>
+                    <span class="text-xl font-bold">Studiez</span>
+                </div>
+
+                <nav class="desktop-nav hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-medium hover:text-coral transition-colors">Home</a>
+                    <a href="#about" class="text-sm font-medium hover:text-coral transition-colors">About</a>
+                    <a href="#olympiads" class="text-sm font-medium hover:text-coral transition-colors">Olympiads</a>
+                    <a href="#testimonials"
+                        class="text-sm font-medium hover:text-coral transition-colors">Testimonials</a>
+                    <a href="#awards" class="text-sm font-medium hover:text-coral transition-colors">Awards</a>
+                    <a href="#gallery" class="text-sm font-medium hover:text-coral transition-colors">Gallery</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <button class="btn-outline whitespace-nowrap hidden md:inline-block">My Account</button>
+                    <button id="mobileToggle"
+                        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg"
+                        style="border: 2px solid var(--color-border);">
+                        <span class="sr-only">Toggle navigation</span>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobileMenu" class="mobile-menu md:hidden hidden pt-3">
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="#home"
+                        class="block px-3 py-2 rounded-lg hover:bg-coral hover:text-white transition">Home</a>
+                    <a href="#about"
+                        class="block px-3 py-2 rounded-lg hover:bg-coral hover:text-white transition">About</a>
+                    <a href="#olympiads"
+                        class="block px-3 py-2 rounded-lg hover:bg-coral hover:text-white transition">Olympiads</a>
+                    <a href="#testimonials"
+                        class="block px-3 py-2 rounded-lg hover:bg-coral hover:text-white transition">Testimonials</a>
+                    <a href="#awards"
+                        class="block px-3 py-2 rounded-lg hover:bg-coral hover:text-white transition">Awards</a>
+                    <a href="#gallery"
+                        class="block px-3 py-2 rounded-lg hover:bg-coral hover:text-white transition">Gallery</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section" style="background: url(https://elementor.altdesain.com/studiez/wp-content/uploads/2025/08/BG1.png);">
+        <!-- Floating Badges -->
+        <div class="floating-badge bg-mint" style="top: 8rem; left: 10%;">Science</div>
+        <div class="floating-badge bg-sky" style="top: 10rem; right: 8%;">Maths</div>
+        <div class="floating-badge bg-coral" style="bottom: 8rem; left: 15%;">Computer</div>
+        <div class="floating-badge bg-sunshine" style="bottom: 10rem; right: 12%;">English</div>
+
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto text-center space-y-8">
+                <h1 class="text-5xl md:text-7xl font-bold hero-text">
+                    Popularizing Academic
+                    <span class="relative inline-block text-highlight-sunshine">Competition
+                        <svg class="underline-svg" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 5c50-3 100-3 196 0" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" style="color: var(--color-sunshine);" />
+                        </svg>
+                    </span><br>
+                    and Assisting <span class="bg-coral text-white px-3 rounded-lg">Development</span>
+                </h1>
+
+                <p class="text-lg text-muted hero-text max-w-3xl mx-auto" style="color: var(--color-muted);">
+                    SOF is an Educational Organization established by leading academicians, scientists and media
+                    personalities with the aim of promoting Science, Mathematics, Computer Education, English, Social
+                    Studies, General Knowledge, and professional courses.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto hero-text items-center justify-center">
+                    <button class="btn-primary whitespace-nowrap">Explore Olympiads</button>
+                    <button class="btn-outline whitespace-nowrap">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20" id="stats-section">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="stat-card bg-mint rounded-3xl p-8 text-center flex flex-col items-center justify-center shadow-card"
+                    style="min-height: 200px;">
+                    <div class="text-5xl font-bold text-white mb-2 counter" data-target="27">0</div>
+                    <div class="text-sm font-semibold text-white">YEARS OF EXCELLENCE</div>
+                </div>
+
+                <div class="stat-card bg-white rounded-3xl p-8 text-center flex flex-col items-center justify-center shadow-card"
+                    style="min-height: 200px;">
+                    <div class="text-5xl font-bold text-coral mb-2 counter" data-target="1000">0</div>
+                    <div class="text-sm font-semibold text-muted">PARTNER SCHOOLS</div>
+                </div>
+
+                <div class="stat-card bg-sky rounded-3xl p-8 text-center flex flex-col items-center justify-center shadow-card"
+                    style="min-height: 200px;">
+                    <div class="text-5xl font-bold text-white mb-2 counter" data-target="1000000">0</div>
+                    <div class="text-sm font-semibold text-white">STUDENTS BENEFITED</div>
+                </div>
+
+                <div class="stat-card bg-sunshine rounded-3xl p-8 text-center flex flex-col items-center justify-center shadow-card"
+                    style="min-height: 200px;">
+                    <div class="text-5xl font-bold text-white mb-2 counter" data-target="50">0</div>
+                    <div class="text-sm font-semibold text-white">COUNTRIES</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-20" id="about"
+        style="background: linear-gradient(135deg, rgba(255, 107, 90, 0.05), rgba(93, 212, 180, 0.05));">
+        <div class="container mx-auto px-4">
+            <div class="max-w-8xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                    <div class="about-item ">
+                        <div class="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-sm">
+                            ABOUT SOF
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                            Building the <span class="text-highlight-coral">Leaders</span> of Tomorrow
+                        </h2>
+                        <p class="text-xl mb-6 leading-relaxed">
+                            In the present times when the world is totally pivoted on science and IT, it is pertinent to
+                            think and plan about the future. Regular qualitative and quantitative assessment needs to be
+                            done at the national/international level in order to build up the scientific, commercial and
+                            IT talent pool.
+                        </p>
+                        <p class="text-xl leading-relaxed">
+                            SOF's integrity and commitment towards the fulfilment of its objectives have been lauded by
+                            thousands of schooling institutions spread across the globe and millions of students who
+                            have directly benefited from its educative, informative and evaluative programs.
+                        </p>
+                    </div>
+                    <div class="about-item">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop"
+                            alt="Students learning" class="rounded-3xl shadow-card w-full object-cover h-full"
+                            style="min-height: 500px;">
+                    </div>
+                </div>
+
+                <!-- Mission Section -->
+                <div class="text-center mb-16 about-item">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Mission</h2>
+                    <p class="text-xl max-w-4xl mx-auto leading-relaxed" style="color: var(--color-muted);">
+                        The key to having a large, exclusive scientific and IT talent pool for the future is seeking
+                        out, identifying young geniuses and providing them with a unique competitive platform.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Mission 1 -->
+                    <div
+                        class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-mint/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-mint to-teal-400 rounded-2xl flex items-center justify-center mb-6 text-white font-bold text-3xl shadow-lg shadow-mint/30 group-hover:scale-110 transition-transform duration-500">
+                                1</div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">Identify & Nurture</h3>
+                            <p class="text-lg leading-relaxed text-gray-600">Identify and nurture future scientists,
+                                technologists, IT and other professional talent at school level.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mission 2 -->
+                    <div
+                        class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-sky/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-sky to-blue-500 rounded-2xl flex items-center justify-center mb-6 text-white font-bold text-3xl shadow-lg shadow-sky/30 group-hover:scale-110 transition-transform duration-500">
+                                2</div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">Encourage Participation</h3>
+                            <p class="text-lg leading-relaxed text-gray-600">Encourage students' participation in
+                                national/international competitions/ programs/events.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mission 3 -->
+                    <div
+                        class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-coral/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-coral to-red-500 rounded-2xl flex items-center justify-center mb-6 text-white font-bold text-3xl shadow-lg shadow-coral/30 group-hover:scale-110 transition-transform duration-500">
+                                3</div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">Global Fraternity</h3>
+                            <p class="text-lg leading-relaxed text-gray-600">Instil a feeling of belonging to the
+                                national and global students fraternity.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mission 4 -->
+                    <div
+                        class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-sunshine/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-sunshine to-yellow-500 rounded-2xl flex items-center justify-center mb-6 text-white font-bold text-3xl shadow-lg shadow-sunshine/30 group-hover:scale-110 transition-transform duration-500">
+                                4</div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">Competitive Spirit</h3>
+                            <p class="text-lg leading-relaxed text-gray-600">Infuse a healthy competitive spirit through
+                                reward based Olympiads/competitive exams.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mission 5 -->
+                    <div
+                        class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-mint/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-mint to-teal-400 rounded-2xl flex items-center justify-center mb-6 text-white font-bold text-3xl shadow-lg shadow-mint/30 group-hover:scale-110 transition-transform duration-500">
+                                5</div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">Interactive Learning</h3>
+                            <p class="text-lg leading-relaxed text-gray-600">Bring about a transformation in the
+                                classroom approach to subjects to make them more interactive, practical & innovative.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Mission 6 -->
+                    <div
+                        class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-sky/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-sky to-blue-500 rounded-2xl flex items-center justify-center mb-6 text-white font-bold text-3xl shadow-lg shadow-sky/30 group-hover:scale-110 transition-transform duration-500">
+                                6</div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">Knowledge Dissemination</h3>
+                            <p class="text-lg leading-relaxed text-gray-600">Disseminate knowledge and information on
+                                the latest developments in science and technology and other subjects.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mission 7 -->
+                    <div
+                        class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden md:col-span-2 lg:col-span-3">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-coral/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-coral to-red-500 rounded-2xl flex items-center justify-center text-white font-bold text-3xl flex-shrink-0 shadow-lg shadow-coral/30 group-hover:scale-110 transition-transform duration-500">
+                                7</div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-gray-800">Centre of Excellence</h3>
+                                <p class="text-lg leading-relaxed text-gray-600">Project SOF as a Centre of Excellence
+                                    that could cater to different schooling institutions in the areas of methodical
+                                    research, new educational tools, special publications and expert advice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Olympiads Section -->
+    <section class="py-20" id="olympiads">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
+                Our Olympiads
+            </h2>
+            <p class="text-center mb-12" style="color: var(--color-muted);">
+                Participate in world-class competitions to test your skills and knowledge
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="olympiads-grid">
+                <!-- Exam 1: ICSO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-mint to-teal-400 p-6 flex items-center justify-center">
+                        <div class="text-6xl">💻</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-white">
+                            Computer Science</div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-mint">SOF ICSO</div>
+                        <h3 class="font-bold text-lg leading-tight">International Computer Science Olympiad</h3>
+                        <p class="text-sm text-muted line-clamp-2">Test your computer knowledge and IT skills on a
+                            global platform.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <span class="text-sm font-semibold text-mint group-hover:underline">Learn More →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exam 2: NSO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-sky to-blue-500 p-6 flex items-center justify-center">
+                        <div class="text-6xl">🔬</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-white">
+                            Science</div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-sky">SOF NSO</div>
+                        <h3 class="font-bold text-lg leading-tight">National Science Olympiad</h3>
+                        <p class="text-sm text-muted line-clamp-2">Cultivate scientific reasoning and logical ability
+                            among students.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <span class="text-sm font-semibold text-sky group-hover:underline">Learn More →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exam 3: IMO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-coral to-red-500 p-6 flex items-center justify-center">
+                        <div class="text-6xl">📐</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-white">
+                            Mathematics</div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-coral">SOF IMO</div>
+                        <h3 class="font-bold text-lg leading-tight">International Mathematics Olympiad</h3>
+                        <p class="text-sm text-muted line-clamp-2">Assess your mathematical understanding and
+                            problem-solving skills.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <span class="text-sm font-semibold text-coral group-hover:underline">Learn More →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exam 4: IEO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-sunshine to-yellow-500 p-6 flex items-center justify-center">
+                        <div class="text-6xl">📚</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-white">
+                            English</div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-sunshine">SOF IEO</div>
+                        <h3 class="font-bold text-lg leading-tight">International English Olympiad</h3>
+                        <p class="text-sm text-muted line-clamp-2">Enhance your English language and communication
+                            skills.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <span class="text-sm font-semibold text-sunshine group-hover:underline">Learn More →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exam 5: ICO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-purple-400 to-purple-600 p-6 flex items-center justify-center">
+                        <div class="text-6xl">📊</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-white">
+                            Commerce</div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-purple-500">SOF ICO</div>
+                        <h3 class="font-bold text-lg leading-tight">International Commerce Olympiad</h3>
+                        <p class="text-sm text-muted line-clamp-2">For students interested in economics, business, and
+                            finance.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <span class="text-sm font-semibold text-purple-500 group-hover:underline">Learn More
+                                →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exam 6: IGKO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-green-400 to-green-600 p-6 flex items-center justify-center">
+                        <div class="text-6xl">🌍</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-white">
+                            General Knowledge</div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-green-500">SOF IGKO</div>
+                        <h3 class="font-bold text-lg leading-tight">International General Knowledge Olympiad</h3>
+                        <p class="text-sm text-muted line-clamp-2">Stay updated with current affairs and general
+                            awareness.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <span class="text-sm font-semibold text-green-500 group-hover:underline">Learn More →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exam 7: ISSO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-orange-400 to-orange-600 p-6 flex items-center justify-center">
+                        <div class="text-6xl">🏛️</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-white">
+                            Social Studies</div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-orange-500">SOF ISSO</div>
+                        <h3 class="font-bold text-lg leading-tight">International Social Studies Olympiad</h3>
+                        <p class="text-sm text-muted line-clamp-2">Explore history, geography, and civics in depth.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <span class="text-sm font-semibold text-orange-500 group-hover:underline">Learn More
+                                →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exam 8: IHO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-pink-400 to-pink-600 p-6 flex items-center justify-center">
+                        <div class="text-6xl">🕉️</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-white">
+                            Hindi</div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-pink-500">SOF IHO</div>
+                        <h3 class="font-bold text-lg leading-tight">International Hindi Olympiad</h3>
+                        <p class="text-sm text-muted line-clamp-2">Promote and test proficiency in the Hindi language.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <span class="text-sm font-semibold text-pink-500 group-hover:underline">Learn More →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20" style="background-color: rgba(229, 225, 216, 0.3);" id="testimonials">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 testimonial-item">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">
+                    What Our <span class="text-highlight-mint">Students</span> Say
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto" style="color: var(--color-muted);">
+                    Real stories from real learners who transformed their careers with Studiez
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="testimonial-card  rounded-3xl p-8 shadow-card testimonial-item">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <p class="text-sm mb-6" style="color: var(--color-muted);">
+                        "Studiez completely transformed my career. The courses are comprehensive, the instructors are
+                        world-class, and the flexible schedule allowed me to learn while working full-time."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                            alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <div class="font-bold">Sarah Johnson</div>
+                            <div class="text-sm" style="color: var(--color-muted);">Software Engineer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-sunshine rounded-3xl p-8 shadow-card testimonial-item">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <p class="text-sm mb-6">
+                        "I've tried many online learning platforms, but Studiez stands out. The quality of content and
+                        the supportive community helped me land my dream job in UX design."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                            alt="Michael Chen" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <div class="font-bold">Michael Chen</div>
+                            <div class="text-sm opacity-80">UX Designer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white rounded-3xl p-8 shadow-card testimonial-item">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="star-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <p class="text-sm mb-6" style="color: var(--color-muted);">
+                        "The best investment I've made in my career. The Python bootcamp was exceptional, and I now work
+                        as a senior developer at a top tech company."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+                            alt="Emily Rodriguez" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <div class="font-bold">Emily Rodriguez</div>
+                            <div class="text-sm" style="color: var(--color-muted);">Senior Developer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="py-20" id="awards">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 award-item">
+                <div class="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    RECOGNITION & AWARDS
+                </div>
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">
+                    Recognized for <span class="text-highlight-sunshine">Excellence</span>
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto" style="color: var(--color-muted);">
+                    Our commitment to quality education has earned us recognition from leading industry organizations
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="award-card bg-gradient-to-br from-mint to-sky rounded-3xl p-8 text-center shadow-card award-item">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Best Online Platform</h3>
+                    <p class="text-sm text-white opacity-90">Education Awards 2024</p>
+                </div>
+
+                <div
+                    class="award-card bg-gradient-to-br from-coral to-sunshine rounded-3xl p-8 text-center shadow-card award-item">
+                    <div class="text-5xl mb-4">⭐</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Innovation in Learning</h3>
+                    <p class="text-sm text-white opacity-90">Tech Innovation Awards</p>
+                </div>
+
+                <div
+                    class="award-card bg-gradient-to-br from-sky to-mint rounded-3xl p-8 text-center shadow-card award-item">
+                    <div class="text-5xl mb-4">🎓</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Student Choice Award</h3>
+                    <p class="text-sm text-white opacity-90">Online Learning Excellence</p>
+                </div>
+
+                <div
+                    class="award-card bg-gradient-to-br from-sunshine to-coral rounded-3xl p-8 text-center shadow-card award-item">
+                    <div class="text-5xl mb-4">💎</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Quality Certification</h3>
+                    <p class="text-sm text-white opacity-90">International Standards</p>
+                </div>
+            </div>
+
+            <div class="mt-16 grid md:grid-cols-3 gap-8">
+                <div class="award-item text-center">
+                    <div class="text-6xl font-bold text-coral mb-2">95%</div>
+                    <div class="text-lg font-semibold mb-2">Student Satisfaction</div>
+                    <p class="text-sm" style="color: var(--color-muted);">Based on 50,000+ reviews</p>
+                </div>
+                <div class="award-item text-center">
+                    <div class="text-6xl font-bold text-mint mb-2">4.9/5</div>
+                    <div class="text-lg font-semibold mb-2">Average Rating</div>
+                    <p class="text-sm" style="color: var(--color-muted);">Across all courses</p>
+                </div>
+                <div class="award-item text-center">
+                    <div class="text-6xl font-bold text-sky mb-2">98%</div>
+                    <div class="text-lg font-semibold mb-2">Completion Rate</div>
+                    <p class="text-sm" style="color: var(--color-muted);">Students finish courses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20" id="gallery" style="background-color: rgba(229, 225, 216, 0.3);">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 gallery-item">
+                <div class="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    OUR GALLERY
+                </div>
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">
+                    Moments of <span class="text-highlight-coral">Success</span>
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto" style="color: var(--color-muted);">
+                    See our students in action, celebrating achievements and learning together
+                </p>
+            </div>
+
+            <div class="grid gallery-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop"
+                        alt="Gallery 1" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square md:row-span-2">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=600&fit=crop"
+                        alt="Gallery 2" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=400&fit=crop"
+                        alt="Gallery 3" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=400&fit=crop"
+                        alt="Gallery 4" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=400&fit=crop"
+                        alt="Gallery 5" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square md:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
+                        alt="Gallery 6" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                    <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&h=400&fit=crop"
+                        alt="Gallery 7" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=400&fit=crop"
+                        alt="Gallery 8" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20" id="pricing-section">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 pricing-item">
+                    <h2 class="text-4xl md:text-5xl font-bold">
+                        Lower prices with a minimum 12-month subscription
+                    </h2>
+                    <p style="color: var(--color-muted);">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                    <button class="btn-outline">Learn More</button>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="pricing-item bg-coral text-white rounded-3xl p-8 shadow-card">
+                        <div class="text-3xl font-bold mb-2">USD $289.99</div>
+                        <div class="text-sm opacity-90">PER MONTH (ANNUAL)</div>
+                    </div>
+
+                    <div class="pricing-item text-white rounded-3xl p-8 shadow-card"
+                        style="background-color: var(--color-foreground);">
+                        <div class="text-3xl font-bold mb-2">PER MONTH FOR 1 USER</div>
+                    </div>
+
+                    <div class="pricing-item bg-coral text-white rounded-3xl p-8 shadow-card">
+                        <div class="text-3xl font-bold">TRY FOR FREE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <footer class="border-t" style="border-color: var(--color-border);">
+        <div class="container mx-auto px-4 py-20">
+            <div class="max-w-3xl mx-auto text-center space-y-8">
+                <h2 class="text-4xl md:text-6xl font-bold">
+                    Start <span class="bg-sunshine px-3 rounded-lg">trying now!</span>
+                </h2>
+                <p style="color: var(--color-muted);">IT CAN BE MORE ACTIVE & FASTER</p>
+                <div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto items-center">
+                    <input type="email" placeholder="Email address" class="flex-1 h-12 px-4 rounded-full border-2"
+                        style="border-color: var(--color-border);">
+                    <button class="btn-primary whitespace-nowrap">Register Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="border-t" style="border-color: var(--color-border);">
+            <div class="container mx-auto px-4 py-12">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl"
+                                style="background: linear-gradient(135deg, var(--color-coral), var(--color-sunshine));">
+                                📚
+                            </div>
+                            <span class="text-xl font-bold">Studiez</span>
+                        </div>
+                        <p class="text-sm" style="color: var(--color-muted);">© 2024 Studiez. All rights reserved.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold mb-4">Company</h3>
+                        <ul class="space-y-2 text-sm" style="color: var(--color-muted);">
+                            <li><a href="#" class="hover:opacity-70">About</a></li>
+                            <li><a href="#" class="hover:opacity-70">Our Team</a></li>
+                            <li><a href="#" class="hover:opacity-70">Careers</a></li>
+                            <li><a href="#" class="hover:opacity-70">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold mb-4">Support</h3>
+                        <ul class="space-y-2 text-sm" style="color: var(--color-muted);">
+                            <li><a href="#" class="hover:opacity-70">FAQs</a></li>
+                            <li><a href="#" class="hover:opacity-70">Support Center</a></li>
+                            <li><a href="#" class="hover:opacity-70">Security</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold mb-4">Follow Us</h3>
+                        <div class="flex gap-4">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-coral transition-colors"
+                                style="background-color: rgba(229, 225, 216, 0.5);">
+                                <span>f</span>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-sky transition-colors"
+                                style="background-color: rgba(229, 225, 216, 0.5);">
+                                <span>t</span>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-mint transition-colors"
+                                style="background-color: rgba(229, 225, 216, 0.5);">
+                                <span>i</span>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-coral transition-colors"
+                                style="background-color: rgba(229, 225, 216, 0.5);">
+                                <span>y</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js"></script>
+    <script src="assest/js/script.js"></script>
+</body>
+
+</html>
