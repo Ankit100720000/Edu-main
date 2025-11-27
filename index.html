@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studiez - Deepen Your Learning Abilities</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deepen Your Learning Abilities</title>
     <meta name="description"
-        content="Unlock your potential with world-class courses, certified instructors, and flexible learning hours.">
+        content="Unlock your potential with world-class courses, certified instructors, and flexible learning hours." />
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,39 +16,44 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.15/dist/lenis.css">
-    <link rel="stylesheet" href="assest/css/style.css">
-
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.15/dist/lenis.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assest/css/style.css" />
 </head>
 
 <body>
     <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b"
-        style="border-color: var(--color-border);">
-        <div class="container mx-auto px-4 py-0">
+    <header class="fixed top-4 left-0 right-0 z-50 px-5" style="border-color: var(--color-border)">
+        <div class="container mx-auto px-3 py-2 bg-yellow-100/60 backdrop-blur-lg rounded-3xl">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                    <img src="sof-logo.png" class="w-24" alt="">
+                    <img src="assest/img/logo.png" class="w-[150px]" alt="Edu Logo" />
                 </div>
 
                 <nav class="desktop-nav hidden md:flex items-center gap-8">
-                    <a href="#home" class="text-sm font-medium hover:text-coral transition-colors">Home</a>
-                    <a href="#about" class="text-sm font-medium hover:text-coral transition-colors">About</a>
-                    <a href="#olympiads" class="text-sm font-medium hover:text-coral transition-colors">Olympiads</a>
+                    <a href="#home" class="text-lg font-medium hover:text-coral transition-colors">Home</a>
+                    <a href="#about" class="text-lg font-medium hover:text-coral transition-colors">About</a>
+                    <a href="#olympiads" class="text-lg font-medium hover:text-coral transition-colors">Olympiads</a>
                     <a href="#testimonials"
-                        class="text-sm font-medium hover:text-coral transition-colors">Testimonials</a>
-                    <a href="#awards" class="text-sm font-medium hover:text-coral transition-colors">Awards</a>
-                    <a href="#gallery" class="text-sm font-medium hover:text-coral transition-colors">Gallery</a>
+                        class="text-lg font-medium hover:text-coral transition-colors">Testimonials</a>
+                    <a href="#awards" class="text-lg font-medium hover:text-coral transition-colors">Awards</a>
+                    <a href="#gallery" class="text-lg font-medium hover:text-coral transition-colors">Gallery</a>
+                    <a href="#partners" class="text-lg font-medium hover:text-coral transition-colors">Partners</a>
+                    <a href="#contact" class="text-lg font-medium hover:text-coral transition-colors">Contact</a>
                 </nav>
                 <div class="flex items-center gap-3">
-                    <button class="btn-outline whitespace-nowrap hidden md:inline-block">My Account</button>
+                    <button
+                        class="btn-outline border-0 bg-yellow-400 shadow-lg whitespace-nowrap hidden md:inline-block">
+                        My Account
+                    </button>
                     <button id="mobileToggle"
-                        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg"
-                        style="border: 2px solid var(--color-border);">
+                        class="md:hidden inline-flex items-center justify-center w-8 h-8 rounded-lg"
+                        style="border: 2px solid var(--color-border)">
                         <span class="sr-only">Toggle navigation</span>
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -73,45 +78,64 @@
                         class="block px-3 py-2 rounded-lg hover:bg-coral hover:text-white transition">Awards</a>
                     <a href="#gallery"
                         class="block px-3 py-2 rounded-lg hover:bg-coral hover:text-white transition">Gallery</a>
+                    <a href="#partners"
+                        class="block px-3 py-2 rounded-lg hover:bg-coral hover:text-white transition">Partners</a>
+                    <a href="#contact"
+                        class="block px-3 py-2 rounded-lg hover:bg-coral hover:text-white transition">Contact</a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section pt-20"
-        style="background: url(https://elementor.altdesain.com/studiez/wp-content/uploads/2025/08/BG1.png); background-size: cover;">
+    <section id="home" class="hero-section pt-10" style="background: url(assest/img/bg2.png); background-size: cover">
         <!-- Floating Badges -->
-        <div class="floating-badge bg-mint" style="top: 8rem; left: 10%;">Science</div>
-        <div class="floating-badge bg-sky" style="top: 10rem; right: 8%;">Maths</div>
-        <div class="floating-badge bg-coral" style="bottom: 8rem; left: 15%;">Computer</div>
-        <div class="floating-badge bg-sunshine" style="bottom: 10rem; right: 12%;">English</div>
+        <div class="floating-badge bg-mint hidden md:block" style="top: 8rem; left: 10%">
+            Science
+        </div>
+        <div class="floating-badge bg-sky hidden md:block" style="top: 10rem; right: 8%">
+            Maths
+        </div>
+        <div class="floating-badge bg-coral hidden md:block" style="bottom: 8rem; left: 15%">
+            Computer
+        </div>
+        <div class="floating-badge bg-sunshine hidden md:block" style="bottom: 10rem; right: 12%">
+            English
+        </div>
 
         <div class="container mx-auto px-4">
-            <div class="max-w-5xl mx-auto text-center space-y-12">
-                <h1 class="text-6xl  font-bold hero-text " style="line-height: 1.5 !important;">
+            <div class="max-w-10xl mx-auto text-center space-y-8 md:space-y-10">
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold hero-text split-text-target"
+                    style="line-height: 1.1 !important">
                     Popularizing Academic
-                    <span class="relative inline-block text-highlight-sunshine"
-                        style="line-height: 1.3 !important;">Competition
-                        <svg class="underline-svg mt-40" viewBox="0 0 200 8" fill="none"
+                    <p class="relative inline-block text-highlight-sunshine" style="line-height: 1.5 !important">
+                        Competition
+                        <!-- <svg class="underline-svg mt-40" viewBox="0 0 200 8" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 5c50-3 100-3 196 0" stroke="currentColor" stroke-width="4"
                                 stroke-linecap="round" style="color: var(--color-sunshine);" />
-                        </svg>
-                    </span>
-                    <br>
-                    and Assisting <span class="bg-coral text-white px-3 rounded-lg">Development</span>
+                        </svg> -->
+                    </p>
+                    <br />
+                    and Assisting
+                    <span class="bg-coral text-white px-3 rounded-lg"
+                        style="line-height: initial my-0 py-0">Development</span>
                 </h1>
 
-                <p class="text-lg text-muted hero-text max-w-4xl mx-auto" style="color: var(--color-muted);">
-                    SOF is an Educational Organization established by leading academicians, scientists and media
-                    personalities with the aim of promoting Science, Mathematics, Computer Education, English, Social
+                <p class="text-base md:text-xl text-zince-600 hero-text max-w-6xl mx-auto">
+                    SOF is an Educational Organization established by leading
+                    academicians, scientists and media personalities with the aim of
+                    promoting Science, Mathematics, Computer Education, English, Social
                     Studies, General Knowledge, and professional courses.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto hero-text items-center justify-center">
-                    <button class="btn-primary whitespace-nowrap">Explore Olympiads</button>
-                    <button class="btn-outline whitespace-nowrap">Learn More</button>
+                    <button class="btn-primary text-lg whitespace-nowrap">
+                        Explore Olympiads
+                    </button>
+                    <button class="btn-outline text-lg whitespace-nowrap">
+                        Learn More
+                    </button>
                 </div>
             </div>
         </div>
@@ -119,177 +143,278 @@
 
     <!-- Stats Section -->
 
-
     <!-- About Us Section -->
-    <section class="py-20" id="about">
-        <div class="container mx-auto px-4 py-20">
+    <section class="pt-10" id="about">
+        <div class="container mx-auto px-4 pt-10 md:pt-10">
             <div class="max-w-9xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="about-item ">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="about-item">
                         <div
-                            class="inline-block bg-yellow-500 text-white px-4 py-2 rounded-full text-[18px] font-semibold mb-6 shadow-sm">
+                            class="inline-block bg-yellow-200/80 backdrop-blur-lg text-blck px-4 py-2 rounded-full text-xl font-semibold mb-5 shadow-xl">
                             ABOUT SOF
                         </div>
-                        <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                            Building the <span class="text-highlight-coral">Leaders</span> of Tomorrow
+                        <h2
+                            class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight split-text-target">
+                            Building the
+                            <span class="bg-coral text-white rounded-lg px-2 font-semibold">Leaders</span>
+                            of Tomorrow
                         </h2>
-                        <p class="text-[17px] mb-6 leading-relaxed">
-                            In the present times when the world is totally pivoted on science and IT, it is pertinent to
-                            think and plan about the future. Regular qualitative and quantitative assessment needs to be
-                            done at the national/international level in order to build up the scientific, commercial and
-                            IT talent pool.
+                        <p class="text-base md:text-lg lg:text-xl text-muted mb-4 leading-tight">
+                            In the present times when the world is totally pivoted on
+                            science and IT, it is pertinent to think and plan about the
+                            future. Regular qualitative and quantitative assessment needs to
+                            be done at the national/international level in order to build up
+                            the scientific, commercial and IT talent pool.
                         </p>
-                        <p class="text-[17px] mb-6 leading-relaxed">
-                            SOF's integrity and commitment towards the fulfilment of its objectives have been lauded by
-                            thousands of schooling institutions spread across the globe and millions of students who
-                            have directly benefited from its educative, informative and evaluative programs.
+                        <p class="text-xl text-muted mb-4 leading-tight">
+                            SOF's integrity and commitment towards the fulfilment of its
+                            objectives have been lauded by thousands of schooling
+                            institutions spread across the globe and millions of students
+                            who have directly benefited from its educative, informative and
+                            evaluative programs.
                         </p>
                     </div>
                     <div class="about-item ps-2">
-                        <img src="https://img.freepik.com/free-photo/smiling-students-with-backpacks_1098-1220.jpg?t=st=1764163971~exp=1764167571~hmac=52052544501f73474b7048fb6259249fba62a9a201a7ba163b593ee1b4d17177&w=1060"
-                            alt="Students learning" class="rounded-3xl shadow-card w-full object-cover h-full "
-                            style="min-height: 500px;">
+                        <!-- <img src="https://img.freepik.com/free-photo/smiling-students-with-backpacks_1098-1220.jpg?t=st=1764163971~exp=1764167571~hmac=52052544501f73474b7048fb6259249fba62a9a201a7ba163b593ee1b4d17177&w=1060"
+                            alt="Students learning" class="rounded-3xl shadow-card w-full object-cover h-full"
+                            style="min-height: 500px" /> -->
+                        <dotlottie-wc src="https://lottie.host/bb39f6f2-2fa2-4b92-a057-367e2daee7d4/vQDsx6grNo.lottie"
+                            style="width: 600px;height: 550px" autoplay loop></dotlottie-wc>
+
                     </div>
                 </div>
+                <div class="overflow-hidden whitespace-nowrap w-full pt-1">
+                    <div class="marquee-track inline-block">
+                        <h3 class="stroke-text opacity-40 text-[100px] font-extrabold px-10 inline-block">
+                            Science Olympiad Foundation — Inspiring Academic Excellence
+                        </h3>
+                        <h3 class="stroke-text opacity-40 text-[100px] font-extrabold px-10 inline-block">
+                            Science Olympiad Foundation — Inspiring Academic Excellence
+                        </h3>
+                        <h3 class="stroke-text opacity-40 text-[100px] font-extrabold px-10 inline-block">
+                            Science Olympiad Foundation — Inspiring Academic Excellence
+                        </h3>
 
+                        <!-- Duplicate for seamless loop -->
+                        <h3 class="stroke-text opacity-40 text-[100px] font-extrabold px-10 inline-block">
+                            Science Olympiad Foundation — Inspiring Academic Excellence
+                        </h3>
+                        <h3 class="stroke-text opacity-40 text-[100px] font-extrabold px-10 inline-block">
+                            Science Olympiad Foundation — Inspiring Academic Excellence
+                        </h3>
+                        <h3 class="stroke-text opacity-40 text-[100px] font-extrabold px-10 inline-block">
+                            Science Olympiad Foundation — Inspiring Academic Excellence
+                        </h3>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="py-20" id="about"
-        style="background: linear-gradient(135deg, rgba(229, 225, 216, 0.6), rgba(229, 225, 216, 0.3)), linear-gradient(315deg, rgba(255, 107, 90, 0.06), rgba(93, 212, 180, 0.06));">
+    <section class="py-20" id="about" style="
+        background-image: radial-gradient(
+          circle 576px at 54.8% 51.5%,
+          rgba(168, 229, 253, 1) 0%,
+          rgba(244, 244, 254, 1) 42.3%,
+          rgba(244, 244, 254, 1) 100.2%
+        );
+      ">
         <div class="container mx-auto px-4 py-15">
             <!-- Mission Section -->
             <div class="text-center mb-6 about-item">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Mission</h2>
-                <p class="text-xl max-w-5xl text-[17px] mx-auto leading-relaxed" style="color: var(--color-muted);">
-                    The key to having a large, exclusive scientific and IT talent pool for the future is
-                    seeking
-                    out, identifying young geniuses and providing them with a unique competitive platform.
+                <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 split-text-target">
+                    Our <span class="text-highlight-mint">Mission</span>
+                </h2>
+                <p class="text-base md:text-lg lg:text-xl max-w-5xl mx-auto leading-relaxed"
+                    style="color: var(--color-muted)">
+                    The key to having a large, exclusive scientific and IT talent pool
+                    for the future is seeking out, identifying young geniuses and
+                    providing them with a unique competitive platform.
                 </p>
             </div>
 
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
                 <!-- Mission 1 -->
                 <div
-                    class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8  shadow-lg hover:shadow-xl transition-all duration-500  overflow-hidden">
+                    class="about-card group relative bg-white/30 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
                     <div class="absolute inset-0 opacity-1 group-hover:opacity-100 transition-opacity duration-500"
-                        style="background: linear-gradient(135deg, rgba(93, 212, 180, 0.2), transparent);">
-                    </div>
+                        style="
+                background: linear-gradient(
+                  155deg,
+                  rgba(93, 212, 180, 0.35),
+                  transparent
+                );
+              "></div>
                     <div class="relative z-10">
                         <div
-                            class="w-16 h-16 bg-mint rounded-2xl flex items-center justify-center mb-6  font-bold text-3xl shadow-lg shadow-mint/10 group-hover:scale-110 transition-transform duration-500">
-                            1</div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Identify & Nurture</h3>
-                        <p class="text-lg leading-relaxed text-gray-600">Identify and nurture future
-                            scientists,
-                            technologists, IT and other professional talent at school level.</p>
+                            class="w-16 h-16 bg-mint rounded-2xl flex items-center justify-center mb-6 font-bold text-3xl shadow-lg shadow-mint/10 group-hover:scale-110 transition-transform duration-500">
+                            1
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-800">
+                            Identify & Nurture
+                        </h3>
+                        <p class="text-base md:text-lg leading-relaxed text-gray-600">
+                            Identify and nurture future scientists, technologists, IT and
+                            other professional talent at school level.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Mission 2 -->
                 <div
-                    class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8  shadow-lg hover:shadow-xl transition-all duration-500  overflow-hidden">
+                    class="about-card group relative bg-white/40 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
                     <div class="absolute inset-0 opacity-1 group-hover:opacity-100 transition-opacity duration-500"
-                        style="background: linear-gradient(135deg, rgba(107, 158, 255, 0.2), transparent);">
-                    </div>
+                        style="
+                background: linear-gradient(
+                  155deg,
+                  rgba(107, 158, 255, 0.35),
+                  transparent
+                );
+              "></div>
                     <div class="relative z-10">
                         <div
-                            class="w-16 h-16 bg-sky rounded-2xl flex items-center justify-center mb-6  font-bold text-3xl shadow-lg shadow-sky/30 group-hover:scale-110 transition-transform duration-500">
-                            2</div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Encourage Participation</h3>
-                        <p class="text-lg leading-relaxed text-gray-600">Encourage students' participation
-                            in
-                            national/international competitions/ programs/events.</p>
+                            class="w-16 h-16 bg-sky rounded-2xl flex items-center justify-center mb-6 font-bold text-3xl shadow-lg shadow-sky/30 group-hover:scale-110 transition-transform duration-500">
+                            2
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-gray-800">
+                            Encourage Participation
+                        </h3>
+                        <p class="text-lg leading-relaxed text-gray-600">
+                            Encourage students' participation in national/international
+                            competitions/ programs/events.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Mission 3 -->
                 <div
-                    class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8  shadow-lg hover:shadow-xl transition-all duration-500  overflow-hidden">
+                    class="about-card group relative bg-white/40 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
                     <div class="absolute inset-0 opacity-1 group-hover:opacity-100 transition-opacity duration-500"
-                        style="background: linear-gradient(135deg, rgba(255, 107, 90, 0.2), transparent);">
-                    </div>
+                        style="
+                background: linear-gradient(
+                  155deg,
+                  rgba(255, 107, 90, 0.35),
+                  transparent
+                );
+              "></div>
                     <div class="relative z-10">
                         <div
-                            class="w-16 h-16 bg-coral rounded-2xl flex items-center justify-center mb-6  font-bold text-3xl shadow-lg shadow-coral/30 group-hover:scale-110 transition-transform duration-500">
-                            3</div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Global Fraternity</h3>
-                        <p class="text-lg leading-relaxed text-gray-600">Instil a feeling of belonging to
-                            the
-                            national and global students fraternity.</p>
+                            class="w-16 h-16 bg-coral rounded-2xl flex items-center justify-center mb-6 font-bold text-3xl shadow-lg shadow-coral/30 group-hover:scale-110 transition-transform duration-500">
+                            3
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-gray-800">
+                            Global Fraternity
+                        </h3>
+                        <p class="text-lg leading-relaxed text-gray-600">
+                            Instil a feeling of belonging to the national and global
+                            students fraternity.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Mission 4 -->
                 <div
-                    class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500  overflow-hidden">
+                    class="about-card group relative bg-white/40 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
                     <div class="absolute inset-0 opacity-1 group-hover:opacity-100 transition-opacity duration-500"
-                        style="background: linear-gradient(135deg, rgba(255, 230, 109, 0.2), transparent);">
-                    </div>
+                        style="
+                background: linear-gradient(
+                  155deg,
+                  rgba(255, 230, 109, 0.35),
+                  transparent
+                );
+              "></div>
                     <div class="relative z-10">
                         <div
-                            class="w-16 h-16 bg-sunshine rounded-2xl flex items-center justify-center mb-6  font-bold text-3xl shadow-lg shadow-sunshine/30 group-hover:scale-110 transition-transform duration-500">
-                            4</div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Competitive Spirit</h3>
-                        <p class="text-lg leading-relaxed text-gray-600">Infuse a healthy competitive spirit
-                            through
-                            reward based Olympiads/competitive exams.</p>
+                            class="w-16 h-16 bg-sunshine rounded-2xl flex items-center justify-center mb-6 font-bold text-3xl shadow-lg shadow-sunshine/30 group-hover:scale-110 transition-transform duration-500">
+                            4
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-gray-800">
+                            Competitive Spirit
+                        </h3>
+                        <p class="text-lg leading-relaxed text-gray-600">
+                            Infuse a healthy competitive spirit through reward based
+                            Olympiads/competitive exams.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Mission 5 -->
                 <div
-                    class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500  overflow-hidden">
+                    class="about-card group relative bg-white/40 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
                     <div class="absolute inset-0 opacity-1 group-hover:opacity-100 transition-opacity duration-500"
-                        style="background: linear-gradient(135deg, rgba(93, 212, 180, 0.2), transparent);">
-                    </div>
+                        style="
+                background: linear-gradient(
+                  155deg,
+                  rgba(93, 212, 180, 0.35),
+                  transparent
+                );
+              "></div>
                     <div class="relative z-10">
                         <div
-                            class="w-16 h-16 bg-mint rounded-2xl flex items-center justify-center mb-6  font-bold text-3xl shadow-lg shadow-mint/30 group-hover:scale-110 transition-transform duration-500">
-                            5</div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Interactive Learning</h3>
-                        <p class="text-lg leading-relaxed text-gray-600">Bring about a transformation in the
-                            classroom approach to subjects to make them more interactive, practical &
-                            innovative.
+                            class="w-16 h-16 bg-mint rounded-2xl flex items-center justify-center mb-6 font-bold text-3xl shadow-lg shadow-mint/30 group-hover:scale-110 transition-transform duration-500">
+                            5
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-gray-800">
+                            Interactive Learning
+                        </h3>
+                        <p class="text-lg leading-relaxed text-gray-600">
+                            Bring about a transformation in the classroom approach to
+                            subjects to make them more interactive, practical & innovative.
                         </p>
                     </div>
                 </div>
 
                 <!-- Mission 6 -->
                 <div
-                    class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500  overflow-hidden">
+                    class="about-card group relative bg-white/40 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
                     <div class="absolute inset-0 opacity-1 group-hover:opacity-100 transition-opacity duration-500"
-                        style="background: linear-gradient(135deg, rgba(107, 158, 255, 0.2), transparent);">
-                    </div>
+                        style="
+                background: linear-gradient(
+                  155deg,
+                  rgba(107, 158, 255, 0.35),
+                  transparent
+                );
+              "></div>
                     <div class="relative z-10">
                         <div
-                            class="w-16 h-16 bg-sky rounded-2xl flex items-center justify-center mb-6  font-bold text-3xl shadow-lg shadow-sky/30 group-hover:scale-110 transition-transform duration-500">
-                            6</div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Knowledge Dissemination</h3>
-                        <p class="text-lg leading-relaxed text-gray-600">Disseminate knowledge and
-                            information on
-                            the latest developments in science and technology and other subjects.</p>
+                            class="w-16 h-16 bg-sky rounded-2xl flex items-center justify-center mb-6 font-bold text-3xl shadow-lg shadow-sky/30 group-hover:scale-110 transition-transform duration-500">
+                            6
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-gray-800">
+                            Knowledge Dissemination
+                        </h3>
+                        <p class="text-lg leading-relaxed text-gray-600">
+                            Disseminate knowledge and information on the latest developments
+                            in science and technology and other subjects.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Mission 7 -->
                 <div
-                    class="about-card group relative bg-white/40 backdrop-blur-md rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500  overflow-hidden md:col-span-2 lg:col-span-3">
+                    class="about-card group relative bg-white/40 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden md:col-span-2 lg:col-span-3">
                     <div class="absolute inset-0 opacity-1 group-hover:opacity-100 transition-opacity duration-500"
-                        style="background: linear-gradient(135deg, rgba(255, 107, 90, 0.2), transparent);">
-                    </div>
+                        style="
+                background: linear-gradient(
+                  155deg,
+                  rgba(255, 107, 90, 0.35),
+                  transparent
+                );
+              "></div>
                     <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
                         <div
-                            class="w-16 h-16 bg-coral rounded-2xl flex items-center justify-center  font-bold text-3xl flex-shrink-0 shadow-lg shadow-coral/30 group-hover:scale-110 transition-transform duration-500">
-                            7</div>
+                            class="w-16 h-16 bg-coral rounded-2xl flex items-center justify-center font-bold text-3xl flex-shrink-0 shadow-lg shadow-coral/30 group-hover:scale-110 transition-transform duration-500">
+                            7
+                        </div>
                         <div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-800">Centre of Excellence</h3>
-                            <p class="text-lg leading-relaxed text-gray-600">Project SOF as a Centre of
-                                Excellence
-                                that could cater to different schooling institutions in the areas of
-                                methodical
-                                research, new educational tools, special publications and expert advice.</p>
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-800">
+                                Centre of Excellence
+                            </h3>
+                            <p class="text-lg leading-relaxed text-gray-600">
+                                Project SOF as a Centre of Excellence that could cater to
+                                different schooling institutions in the areas of methodical
+                                research, new educational tools, special publications and
+                                expert advice.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -299,28 +424,40 @@
     <section class="py-20 bg-[rgb(245, 243, 238)]" id="stats-section">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="stat-card bg-mint rounded-3xl p-8 text-center flex flex-col items-center justify-center shadow-card"
-                    style="min-height: 200px;">
-                    <div class="text-5xl font-bold text-white mb-2 counter" data-target="27">0</div>
-                    <div class="text-sm font-semibold text-white">YEARS OF EXCELLENCE</div>
+                <div class="stat-card bg-[#ff4f7a] rounded-3xl p-2 text-center flex flex-col items-center justify-center shadow-card"
+                    style="min-height: 180px">
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2 counter" data-target="27">
+                        0
+                    </div>
+                    <div class="text-xl md:text-2xl font-semibold text-white">
+                        YEARS OF EXCELLENCE
+                    </div>
                 </div>
 
-                <div class="stat-card bg-white rounded-3xl p-8 text-center flex flex-col items-center justify-center shadow-card"
-                    style="min-height: 200px;">
-                    <div class="text-5xl font-bold text-coral mb-2 counter" data-target="1000">0</div>
-                    <div class="text-sm font-semibold text-muted">PARTNER SCHOOLS</div>
+                <div class="stat-card bg-emerald-400 rounded-3xl p-2 text-center flex flex-col items-center justify-center shadow-card"
+                    style="min-height: 180px">
+                    <div class="text-5xl font-bold text-white mb-2 counter" data-target="1000">
+                        0
+                    </div>
+                    <div class="text-2xl font-semibold text-white">PARTNER SCHOOLS</div>
                 </div>
 
-                <div class="stat-card bg-sky rounded-3xl p-8 text-center flex flex-col items-center justify-center shadow-card"
-                    style="min-height: 200px;">
-                    <div class="text-5xl font-bold text-white mb-2 counter" data-target="1000000">0</div>
-                    <div class="text-sm font-semibold text-white">STUDENTS BENEFITED</div>
+                <div class="stat-card bg-sky rounded-3xl p-2 text-center flex flex-col items-center justify-center shadow-card"
+                    style="min-height: 180px">
+                    <div class="text-5xl font-bold text-white mb-2 counter" data-target="1000000">
+                        0
+                    </div>
+                    <div class="text-2xl font-semibold text-white">
+                        STUDENTS BENEFITED
+                    </div>
                 </div>
 
-                <div class="stat-card bg-sunshine rounded-3xl p-8 text-center flex flex-col items-center justify-center shadow-card"
-                    style="min-height: 200px;">
-                    <div class="text-5xl font-bold text-white mb-2 counter" data-target="50">0</div>
-                    <div class="text-sm font-semibold text-white">COUNTRIES</div>
+                <div class="stat-card bg-yellow-300 rounded-3xl p-2 text-center flex flex-col items-center justify-center shadow-card"
+                    style="min-height: 180px">
+                    <div class="text-5xl font-bold text-white mb-2 counter" data-target="50">
+                        0
+                    </div>
+                    <div class="text-2xl font-semibold text-white">COUNTRIES</div>
                 </div>
             </div>
         </div>
@@ -329,286 +466,491 @@
     <!-- Olympiads Section -->
     <section class="py-20" id="olympiads">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
-                Our Olympiads
+            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-4 split-text-target">
+                Our <span class="bg-coral text-white rounded-lg px-2 font-semibold"> Olympiads</span>
             </h2>
-            <p class="text-center mb-12" style="color: var(--color-muted);">
-                Participate in world-class competitions to test your skills and knowledge
+            <p class="text-base md:text-lg lg:text-xl text-center mb-12" style="color: var(--color-muted)">
+                Participate in world-class competitions to test your skills and
+                knowledge
             </p>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="olympiads-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="olympiads-grid">
+                <!-- ICSO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 bg-mint p-6 flex items-center justify-center">
+                        <div class="text-6xl">💻</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
+                            Computer Science
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-mint">SOF ICSO</div>
+                        <h3 class="font-bold text-xl leading-tight">
+                            International Computer Science Olympiad
+                        </h3>
+                        <p class="text-sm text-muted line-clamp-2">
+                            Test your computer knowledge and IT skills on a global platform.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <a href="#" class="text-sm font-semibold text-mint group-hover:underline">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- ICSO -->
-    <div class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
-        <div class="relative h-48 bg-mint p-6 flex items-center justify-center">
-            <div class="text-6xl">💻</div>
-            <div class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
-                Computer Science
-            </div>
-        </div>
-        <div class="p-6 space-y-3">
-            <div class="text-xs font-semibold text-mint">SOF ICSO</div>
-            <h3 class="font-bold text-xl leading-tight">International Computer Science Olympiad</h3>
-            <p class="text-sm text-muted line-clamp-2">Test your computer knowledge and IT skills on a global platform.</p>
-            <div class="flex items-center justify-between pt-2 border-t border-gray-100">
-                <a href="#" class="text-sm font-semibold text-mint group-hover:underline">Learn More →</a>
-            </div>
-        </div>
-    </div>
+                <!-- NSO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 bg-sky p-6 flex items-center justify-center">
+                        <div class="text-6xl">🔬</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
+                            Science
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-sky">SOF NSO</div>
+                        <h3 class="font-bold text-xl leading-tight">
+                            National Science Olympiad
+                        </h3>
+                        <p class="text-sm text-muted line-clamp-2">
+                            Cultivate scientific reasoning and logical ability among
+                            students.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <a href="#" class="text-sm font-semibold text-sky group-hover:underline">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- NSO -->
-    <div class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
-        <div class="relative h-48 bg-sky p-6 flex items-center justify-center">
-            <div class="text-6xl">🔬</div>
-            <div class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
-                Science
-            </div>
-        </div>
-        <div class="p-6 space-y-3">
-            <div class="text-xs font-semibold text-sky">SOF NSO</div>
-            <h3 class="font-bold text-xl leading-tight">National Science Olympiad</h3>
-            <p class="text-sm text-muted line-clamp-2">Cultivate scientific reasoning and logical ability among students.</p>
-            <div class="flex items-center justify-between pt-2 border-t border-gray-100">
-                <a href="#" class="text-sm font-semibold text-sky group-hover:underline">Learn More →</a>
-            </div>
-        </div>
-    </div>
+                <!-- IMO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 bg-coral p-6 flex items-center justify-center">
+                        <div class="text-6xl">📐</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
+                            Mathematics
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-coral">SOF IMO</div>
+                        <h3 class="font-bold text-xl leading-tight">
+                            International Mathematics Olympiad
+                        </h3>
+                        <p class="text-sm text-muted line-clamp-2">
+                            Assess your mathematical understanding and problem-solving
+                            skills.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <a href="#" class="text-sm font-semibold text-coral group-hover:underline">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- IMO -->
-    <div class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
-        <div class="relative h-48 bg-coral p-6 flex items-center justify-center">
-            <div class="text-6xl">📐</div>
-            <div class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
-                Mathematics
-            </div>
-        </div>
-        <div class="p-6 space-y-3">
-            <div class="text-xs font-semibold text-coral">SOF IMO</div>
-            <h3 class="font-bold text-xl leading-tight">International Mathematics Olympiad</h3>
-            <p class="text-sm text-muted line-clamp-2">Assess your mathematical understanding and problem-solving skills.</p>
-            <div class="flex items-center justify-between pt-2 border-t border-gray-100">
-                <a href="#" class="text-sm font-semibold text-coral group-hover:underline">Learn More →</a>
-            </div>
-        </div>
-    </div>
+                <!-- IEO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 bg-sunshine p-6 flex items-center justify-center">
+                        <div class="text-6xl">📚</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
+                            English
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-sunshine">SOF IEO</div>
+                        <h3 class="font-bold text-xl leading-tight">
+                            International English Olympiad
+                        </h3>
+                        <p class="text-sm text-muted line-clamp-2">
+                            Enhance your English language and communication skills.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <a href="#" class="text-sm font-semibold text-sunshine group-hover:underline">Learn More
+                                →</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- IEO -->
-    <div class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
-        <div class="relative h-48 bg-sunshine p-6 flex items-center justify-center">
-            <div class="text-6xl">📚</div>
-            <div class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
-                English
-            </div>
-        </div>
-        <div class="p-6 space-y-3">
-            <div class="text-xs font-semibold text-sunshine">SOF IEO</div>
-            <h3 class="font-bold text-xl leading-tight">International English Olympiad</h3>
-            <p class="text-sm text-muted line-clamp-2">Enhance your English language and communication skills.</p>
-            <div class="flex items-center justify-between pt-2 border-t border-gray-100">
-                <a href="#" class="text-sm font-semibold text-sunshine group-hover:underline">Learn More →</a>
-            </div>
-        </div>
-    </div>
+                <!-- ICO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 bg-purple-200 p-6 flex items-center justify-center">
+                        <div class="text-6xl">📊</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
+                            Commerce
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-purple-500">SOF ICO</div>
+                        <h3 class="font-bold text-xl leading-tight">
+                            International Commerce Olympiad
+                        </h3>
+                        <p class="text-sm text-muted line-clamp-2">
+                            For students interested in economics, business, and finance.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <a href="#" class="text-sm font-semibold text-purple-500 group-hover:underline">Learn More
+                                →</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- ICO -->
-    <div class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
-        <div class="relative h-48 bg-purple-200 p-6 flex items-center justify-center">
-            <div class="text-6xl">📊</div>
-            <div class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
-                Commerce
-            </div>
-        </div>
-        <div class="p-6 space-y-3">
-            <div class="text-xs font-semibold text-purple-500">SOF ICO</div>
-            <h3 class="font-bold text-xl leading-tight">International Commerce Olympiad</h3>
-            <p class="text-sm text-muted line-clamp-2">For students interested in economics, business, and finance.</p>
-            <div class="flex items-center justify-between pt-2 border-t border-gray-100">
-                <a href="#" class="text-sm font-semibold text-purple-500 group-hover:underline">Learn More →</a>
-            </div>
-        </div>
-    </div>
+                <!-- IGKO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 bg-green-200 p-6 flex items-center justify-center">
+                        <div class="text-6xl">🌍</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
+                            General Knowledge
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-green-500">SOF IGKO</div>
+                        <h3 class="font-bold text-xl leading-tight">
+                            International General Knowledge Olympiad
+                        </h3>
+                        <p class="text-sm text-muted line-clamp-2">
+                            Stay updated with current affairs and general awareness.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <a href="#" class="text-sm font-semibold text-green-500 group-hover:underline">Learn More
+                                →</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- IGKO -->
-    <div class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
-        <div class="relative h-48 bg-green-200 p-6 flex items-center justify-center">
-            <div class="text-6xl">🌍</div>
-            <div class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
-                General Knowledge
-            </div>
-        </div>
-        <div class="p-6 space-y-3">
-            <div class="text-xs font-semibold text-green-500">SOF IGKO</div>
-            <h3 class="font-bold text-xl leading-tight">International General Knowledge Olympiad</h3>
-            <p class="text-sm text-muted line-clamp-2">Stay updated with current affairs and general awareness.</p>
-            <div class="flex items-center justify-between pt-2 border-t border-gray-100">
-                <a href="#" class="text-sm font-semibold text-green-500 group-hover:underline">Learn More →</a>
-            </div>
-        </div>
-    </div>
+                <!-- ISSO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 bg-orange-200 p-6 flex items-center justify-center">
+                        <div class="text-6xl">🏛️</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
+                            Social Studies
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-orange-500">SOF ISSO</div>
+                        <h3 class="font-bold text-xl leading-tight">
+                            International Social Studies Olympiad
+                        </h3>
+                        <p class="text-sm text-muted line-clamp-2">
+                            Explore history, geography, and civics in depth.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <a href="#" class="text-sm font-semibold text-orange-500 group-hover:underline">Learn More
+                                →</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- ISSO -->
-    <div class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
-        <div class="relative h-48 bg-orange-200 p-6 flex items-center justify-center">
-            <div class="text-6xl">🏛️</div>
-            <div class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
-                Social Studies
+                <!-- IHO -->
+                <div
+                    class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 bg-pink-200 p-6 flex items-center justify-center">
+                        <div class="text-6xl">🕉️</div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
+                            Hindi
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="text-xs font-semibold text-pink-500">SOF IHO</div>
+                        <h3 class="font-bold text-xl leading-tight">
+                            International Hindi Olympiad
+                        </h3>
+                        <p class="text-sm text-muted line-clamp-2">
+                            Promote and test proficiency in the Hindi language.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <a href="#" class="text-sm font-semibold text-pink-500 group-hover:underline">Learn More
+                                →</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="p-6 space-y-3">
-            <div class="text-xs font-semibold text-orange-500">SOF ISSO</div>
-            <h3 class="font-bold text-xl leading-tight">International Social Studies Olympiad</h3>
-            <p class="text-sm text-muted line-clamp-2">Explore history, geography, and civics in depth.</p>
-            <div class="flex items-center justify-between pt-2 border-t border-gray-100">
-                <a href="#" class="text-sm font-semibold text-orange-500 group-hover:underline">Learn More →</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- IHO -->
-    <div class="course-card bg-white rounded-3xl overflow-hidden shadow-card group hover:shadow-xl transition-all duration-300">
-        <div class="relative h-48 bg-pink-200 p-6 flex items-center justify-center">
-            <div class="text-6xl">🕉️</div>
-            <div class="absolute top-4 left-4 bg-white/20 backdrop-blur-lg px-3 py-1 rounded-full text-xs font-bold text-blck">
-                Hindi
-            </div>
-        </div>
-        <div class="p-6 space-y-3">
-            <div class="text-xs font-semibold text-pink-500">SOF IHO</div>
-            <h3 class="font-bold text-xl leading-tight">International Hindi Olympiad</h3>
-            <p class="text-sm text-muted line-clamp-2">Promote and test proficiency in the Hindi language.</p>
-            <div class="flex items-center justify-between pt-2 border-t border-gray-100">
-                <a href="#" class="text-sm font-semibold text-pink-500 group-hover:underline">Learn More →</a>
-            </div>
-        </div>
-    </div>
-
-</div>
-
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20" style="background-color: rgba(229, 225, 216, 0.3);" id="testimonials">
+    <section class="py-20" style="background-color: rgba(229, 225, 216, 0.3)" id="testimonials">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 testimonial-item">
-                <h2 class="text-4xl md:text-6xl font-bold mb-4">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 split-text-target">
                     What Our <span class="text-highlight-mint">Students</span> Say
                 </h2>
-                <p class="text-lg max-w-2xl mx-auto" style="color: var(--color-muted);">
-                    Real stories from real learners who transformed their careers with Studiez
+                <p class="text-base md:text-lg lg:text-xl max-w-2xl mx-auto" style="color: var(--color-muted)">
+                    Real stories from real learners who transformed their careers with
+                    Studiez
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <div class="testimonial-card  rounded-3xl p-8 shadow-card testimonial-item">
-                    <div class="flex items-center gap-1 mb-4">
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                    </div>
-                    <p class="text-sm mb-6" style="color: var(--color-muted);">
-                        "Studiez completely transformed my career. The courses are comprehensive, the instructors are
-                        world-class, and the flexible schedule allowed me to learn while working full-time."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
-                            alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <div class="font-bold">Sarah Johnson</div>
-                            <div class="text-sm" style="color: var(--color-muted);">Software Engineer</div>
+            <!-- Swiper Slider -->
+            <div class="testimonial-item">
+                <div class="swiper testimonialsSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Testimonial 1 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card rounded-3xl p-8 shadow-card h-full flex flex-col"
+                                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <div class="flex items-center gap-1 mb-4">
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFE66D">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFE66D">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFE66D">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFE66D">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFE66D">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                </div>
+                                <p class="text-base md:text-lg mb-6 flex-grow text-white">
+                                    "SOF Olympiads helped me discover my true potential in mathematics. The competitive
+                                    environment and challenging questions pushed me to excel beyond my expectations."
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                                        alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover" />
+                                    <div>
+                                        <div class="font-bold text-white">Priya Sharma</div>
+                                        <div class="text-sm text-white opacity-90">
+                                            Gold Medalist, IMO
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="testimonial-card bg-sunshine rounded-3xl p-8 shadow-card testimonial-item">
-                    <div class="flex items-center gap-1 mb-4">
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                    </div>
-                    <p class="text-sm mb-6">
-                        "I've tried many online learning platforms, but Studiez stands out. The quality of content and
-                        the supportive community helped me land my dream job in UX design."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
-                            alt="Michael Chen" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <div class="font-bold">Michael Chen</div>
-                            <div class="text-sm opacity-80">UX Designer</div>
+                        <!-- Testimonial 2 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card rounded-3xl p-8 shadow-card h-full flex flex-col"
+                                style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                <div class="flex items-center gap-1 mb-4">
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#1F1F23">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#1F1F23">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#1F1F23">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#1F1F23">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#1F1F23">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                </div>
+                                <p class="text-base md:text-lg mb-6 flex-grow text-white">
+                                    "Participating in NSO changed my perspective on science. The olympiad not only
+                                    tested my knowledge but also inspired me to pursue research in physics."
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                                        alt="Arjun Patel" class="w-12 h-12 rounded-full object-cover" />
+                                    <div>
+                                        <div class="font-bold text-white">Arjun Patel</div>
+                                        <div class="text-sm text-white opacity-90">Rank 1, NSO National Level</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="testimonial-card bg-white rounded-3xl p-8 shadow-card testimonial-item">
-                    <div class="flex items-center gap-1 mb-4">
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                        <svg class="star-icon" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                    </div>
-                    <p class="text-sm mb-6" style="color: var(--color-muted);">
-                        "The best investment I've made in my career. The Python bootcamp was exceptional, and I now work
-                        as a senior developer at a top tech company."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
-                            alt="Emily Rodriguez" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <div class="font-bold">Emily Rodriguez</div>
-                            <div class="text-sm" style="color: var(--color-muted);">Senior Developer</div>
+                        <!-- Testimonial 3 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card rounded-3xl p-8 shadow-card h-full flex flex-col"
+                                style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                <div class="flex items-center gap-1 mb-4">
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFE66D">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFE66D">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFE66D">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFE66D">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFE66D">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                </div>
+                                <p class="text-base md:text-lg mb-6 flex-grow text-white">
+                                    "The English Olympiad improved my language skills tremendously. I can now express
+                                    myself more confidently and have developed a genuine love for literature."
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+                                        alt="Ananya Reddy" class="w-12 h-12 rounded-full object-cover" />
+                                    <div>
+                                        <div class="font-bold text-white">Ananya Reddy</div>
+                                        <div class="text-sm text-white opacity-90">
+                                            IEO State Topper
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card rounded-3xl p-8 shadow-card h-full flex flex-col"
+                                style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                                <div class="flex items-center gap-1 mb-4">
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#1F1F23">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#1F1F23">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#1F1F23">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#1F1F23">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#1F1F23">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                </div>
+                                <p class="text-base md:text-lg mb-6 flex-grow">
+                                    "ICSO introduced me to the world of coding and computer science. The problem-solving
+                                    challenges prepared me for competitive programming at the international level."
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                                        alt="Rohan Kumar" class="w-12 h-12 rounded-full object-cover" />
+                                    <div>
+                                        <div class="font-bold text-white">Rohan Kumar</div>
+                                        <div class="text-sm text-white opacity-90">ICSO Gold Medalist</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card rounded-3xl p-8 shadow-card h-full flex flex-col"
+                                style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                                <div class="flex items-center gap-1 mb-4">
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                </div>
+                                <p class="text-base md:text-lg mb-6 flex-grow ">
+                                    "General Knowledge Olympiad broadened my horizons. I'm now aware of global affairs
+                                    and current events, which has made me a more informed citizen."
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop"
+                                        alt="Meera Singh" class="w-12 h-12 rounded-full object-cover" />
+                                    <div>
+                                        <div class="font-bold ">Meera Singh</div>
+                                        <div class="text-sm text-black opacity-90">IGKO District Champion</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 6 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card rounded-3xl p-8 shadow-card h-full flex flex-col"
+                                style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%, #feada6 100%);">
+                                <div class="flex items-center gap-1 mb-4">
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="star-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                </div>
+                                <p class="text-base md:text-lg mb-6 flex-grow ">
+                                    "SOF Social Studies Olympiad deepened my understanding of history and civics. It's
+                                    amazing how learning can be both challenging and enjoyable at the same time!"
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop"
+                                        alt="Karthik Iyer" class="w-12 h-12 rounded-full object-cover" />
+                                    <div>
+                                        <div class="font-bold ">Karthik Iyer</div>
+                                        <div class="text-sm text-black opacity-90">ISSO Top 10 Finalist</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Navigation -->
+                    <div class="swiper-button-next testimonial-nav"></div>
+                    <div class="swiper-button-prev testimonial-nav"></div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination testimonial-pagination"></div>
                 </div>
             </div>
         </div>
@@ -618,147 +960,486 @@
     <section class="py-20" id="awards">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 award-item">
-                <div class="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                <!-- <div class="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
                     RECOGNITION & AWARDS
-                </div>
-                <h2 class="text-4xl md:text-6xl font-bold mb-4">
-                    Recognized for <span class="text-highlight-sunshine">Excellence</span>
+                </div> -->
+                <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 split-text-target">
+                    Recognized for
+                    <span class="text-highlight-sunshine">Excellence</span>
                 </h2>
-                <p class="text-lg max-w-2xl mx-auto" style="color: var(--color-muted);">
-                    Our commitment to quality education has earned us recognition from leading industry organizations
+                <p class="text-base md:text-lg max-w-2xl mx-auto" style="color: var(--color-muted)">
+                    Our commitment to quality education has earned us recognition from
+                    leading industry organizations
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="award-card rounded-3xl p-8 text-center shadow-card award-item"
-                    style="background: linear-gradient(135deg, var(--color-mint), var(--color-sky));">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="award-card rounded-3xl p-8 text-center shadow-card award-item" style="
+              background: linear-gradient(
+                135deg,
+                var(--color-mint),
+                var(--color-sky)
+              );
+            ">
                     <div class="text-5xl mb-4">🏆</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Best Online Platform</h3>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Best Online Platform
+                    </h3>
                     <p class="text-sm text-white opacity-90">Education Awards 2024</p>
                 </div>
 
-                <div class="award-card rounded-3xl p-8 text-center shadow-card award-item"
-                    style="background: linear-gradient(135deg, var(--color-coral), var(--color-sunshine));">
+                <div class="award-card rounded-3xl p-8 text-center shadow-card award-item" style="
+              background: linear-gradient(
+                135deg,
+                var(--color-coral),
+                var(--color-sunshine)
+              );
+            ">
                     <div class="text-5xl mb-4">⭐</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Innovation in Learning</h3>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Innovation in Learning
+                    </h3>
                     <p class="text-sm text-white opacity-90">Tech Innovation Awards</p>
                 </div>
 
-                <div class="award-card rounded-3xl p-8 text-center shadow-card award-item"
-                    style="background: linear-gradient(135deg, var(--color-sky), var(--color-mint));">
+                <div class="award-card rounded-3xl p-8 text-center shadow-card award-item" style="
+              background: linear-gradient(
+                135deg,
+                var(--color-sky),
+                var(--color-mint)
+              );
+            ">
                     <div class="text-5xl mb-4">🎓</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Student Choice Award</h3>
-                    <p class="text-sm text-white opacity-90">Online Learning Excellence</p>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Student Choice Award
+                    </h3>
+                    <p class="text-sm text-white opacity-90">
+                        Online Learning Excellence
+                    </p>
                 </div>
 
-                <div class="award-card rounded-3xl p-8 text-center shadow-card award-item"
-                    style="background: linear-gradient(135deg, var(--color-sunshine), var(--color-coral));">
+                <div class="award-card rounded-3xl p-8 text-center shadow-card award-item" style="
+              background: linear-gradient(
+                135deg,
+                var(--color-sunshine),
+                var(--color-coral)
+              );
+            ">
                     <div class="text-5xl mb-4">💎</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Quality Certification</h3>
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Quality Certification
+                    </h3>
                     <p class="text-sm text-white opacity-90">International Standards</p>
                 </div>
             </div>
 
-            <div class="mt-16 grid md:grid-cols-3 gap-8">
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="award-item text-center">
-                    <div class="text-6xl font-bold text-coral mb-2">95%</div>
-                    <div class="text-lg font-semibold mb-2">Student Satisfaction</div>
-                    <p class="text-sm" style="color: var(--color-muted);">Based on 50,000+ reviews</p>
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-coral mb-2">95%</div>
+                    <div class="text-base md:text-lg font-semibold mb-2">Student Satisfaction</div>
+                    <p class="text-sm" style="color: var(--color-muted)">
+                        Based on 50,000+ reviews
+                    </p>
                 </div>
                 <div class="award-item text-center">
-                    <div class="text-6xl font-bold text-mint mb-2">4.9/5</div>
-                    <div class="text-lg font-semibold mb-2">Average Rating</div>
-                    <p class="text-sm" style="color: var(--color-muted);">Across all courses</p>
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-mint mb-2">4.9/5</div>
+                    <div class="text-base md:text-lg font-semibold mb-2">Average Rating</div>
+                    <p class="text-sm" style="color: var(--color-muted)">
+                        Across all courses
+                    </p>
                 </div>
                 <div class="award-item text-center">
-                    <div class="text-6xl font-bold text-sky mb-2">98%</div>
-                    <div class="text-lg font-semibold mb-2">Completion Rate</div>
-                    <p class="text-sm" style="color: var(--color-muted);">Students finish courses</p>
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-sky mb-2">98%</div>
+                    <div class="text-base md:text-lg font-semibold mb-2">Completion Rate</div>
+                    <p class="text-sm" style="color: var(--color-muted)">
+                        Students finish courses
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section class="py-20" id="gallery" style="background-color: rgba(229, 225, 216, 0.3);">
+    <section class="py-20" id="gallery" style="background-color: rgba(229, 225, 216, 0.3)">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 gallery-item">
                 <div class="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
                     OUR GALLERY
                 </div>
-                <h2 class="text-4xl md:text-6xl font-bold mb-4">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 split-text-target">
                     Moments of <span class="text-highlight-coral">Success</span>
                 </h2>
-                <p class="text-lg max-w-2xl mx-auto" style="color: var(--color-muted);">
-                    See our students in action, celebrating achievements and learning together
+                <p class="text-base md:text-lg max-w-2xl mx-auto" style="color: var(--color-muted)">
+                    See our students in action, celebrating achievements and learning
+                    together
                 </p>
             </div>
 
             <div class="grid gallery-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square cursor-pointer group">
                     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop"
-                        alt="Gallery 1" class="w-full h-full object-cover">
+                        alt="Gallery 1"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square md:row-span-2">
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square cursor-pointer group">
                     <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=600&fit=crop"
-                        alt="Gallery 2" class="w-full h-full object-cover">
+                        alt="Gallery 2"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square cursor-pointer group">
                     <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=400&fit=crop"
-                        alt="Gallery 3" class="w-full h-full object-cover">
+                        alt="Gallery 3"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square cursor-pointer group">
                     <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=400&fit=crop"
-                        alt="Gallery 4" class="w-full h-full object-cover">
+                        alt="Gallery 4"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square cursor-pointer group">
                     <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=400&fit=crop"
-                        alt="Gallery 5" class="w-full h-full object-cover">
+                        alt="Gallery 5"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square md:col-span-2">
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square cursor-pointer group">
                     <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-                        alt="Gallery 6" class="w-full h-full object-cover">
+                        alt="Gallery 6"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square cursor-pointer group">
                     <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&h=400&fit=crop"
-                        alt="Gallery 7" class="w-full h-full object-cover">
+                        alt="Gallery 7"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square">
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-card aspect-square cursor-pointer group">
                     <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=400&fit=crop"
-                        alt="Gallery 8" class="w-full h-full object-cover">
+                        alt="Gallery 8"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="py-20" id="pricing-section">
+    <!-- Our Partners Section -->
+    <section class="py-20" id="partners" style="background-color: rgba(229, 225, 216, 0.3)">
         <div class="container mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 pricing-item">
-                    <h2 class="text-4xl md:text-5xl font-bold">
-                        Lower prices with a minimum 12-month subscription
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 partner-item">
+                    <div class="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        OUR PARTNERS
+                    </div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 split-text-target">
+                        Trusted by
+                        <span class="text-highlight-sunshine">Leading</span> Institutions
                     </h2>
-                    <p style="color: var(--color-muted);">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
+                    <p class="text-base md:text-lg max-w-2xl mx-auto" style="color: var(--color-muted)">
+                        We collaborate with prestigious schools and educational
+                        organizations worldwide
                     </p>
-                    <button class="btn-outline">Learn More</button>
                 </div>
 
-                <div class="space-y-4">
-                    <div class="pricing-item bg-coral text-white rounded-3xl p-8 shadow-card">
-                        <div class="text-3xl font-bold mb-2">USD $289.99</div>
-                        <div class="text-sm opacity-90">PER MONTH (ANNUAL)</div>
+                <!-- Swiper Slider -->
+                <div class="partner-item">
+                    <div class="swiper partnersSwiper">
+                        <div class="swiper-wrapper">
+                            <!-- Partner 1 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="partner-card bg-white rounded-3xl p-8 shadow-card h-full flex items-center justify-center hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-mint/30">
+                                    <div class="text-center w-full">
+                                        <div class="h-20 flex items-center justify-center mb-4">
+                                            <img src="https://placehold.co/200x80/transparent/222?text=Google"
+                                                alt="Google" class="partner-logo max-h-full object-contain">
+                                        </div>
+                                        <h3 class="font-bold text-lg">Google for Education</h3>
+                                        <p class="text-sm mt-2" style="color: var(--color-muted)">
+                                            Technology Partner
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Partner 2 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="partner-card bg-white rounded-3xl p-8 shadow-card h-full flex items-center justify-center hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-sky/30">
+                                    <div class="text-center w-full">
+                                        <div class="h-20 flex items-center justify-center mb-4">
+                                            <img src="https://placehold.co/200x80/transparent/222?text=Microsoft"
+                                                alt="Microsoft" class="partner-logo max-h-full object-contain">
+                                        </div>
+                                        <h3 class="font-bold text-lg">Microsoft</h3>
+                                        <p class="text-sm mt-2" style="color: var(--color-muted)">
+                                            Innovation Partner
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Partner 3 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="partner-card bg-white rounded-3xl p-8 shadow-card h-full flex items-center justify-center hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-coral/30">
+                                    <div class="text-center w-full">
+                                        <div class="h-20 flex items-center justify-center mb-4">
+                                            <img src="https://placehold.co/200x80/transparent/222?text=Harvard"
+                                                alt="Harvard" class="partner-logo max-h-full object-contain">
+                                        </div>
+                                        <h3 class="font-bold text-lg">Harvard University</h3>
+                                        <p class="text-sm mt-2" style="color: var(--color-muted)">
+                                            Academic Partner
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Partner 4 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="partner-card bg-white rounded-3xl p-8 shadow-card h-full flex items-center justify-center hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-sunshine/30">
+                                    <div class="text-center w-full">
+                                        <div class="h-20 flex items-center justify-center mb-4">
+                                            <img src="https://placehold.co/200x80/transparent/222?text=NASA" alt="NASA"
+                                                class="partner-logo max-h-full object-contain">
+                                        </div>
+                                        <h3 class="font-bold text-lg">NASA</h3>
+                                        <p class="text-sm mt-2" style="color: var(--color-muted)">
+                                            Space Science Partner
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Partner 5 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="partner-card bg-white rounded-3xl p-8 shadow-card h-full flex items-center justify-center hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-mint/30">
+                                    <div class="text-center w-full">
+                                        <div class="h-20 flex items-center justify-center mb-4">
+                                            <img src="https://placehold.co/200x80/transparent/222?text=Coursera"
+                                                alt="Coursera" class="partner-logo max-h-full object-contain">
+                                        </div>
+                                        <h3 class="font-bold text-lg">Coursera</h3>
+                                        <p class="text-sm mt-2" style="color: var(--color-muted)">
+                                            Content Partner
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Partner 6 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="partner-card bg-white rounded-3xl p-8 shadow-card h-full flex items-center justify-center hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-sky/30">
+                                    <div class="text-center w-full">
+                                        <div class="h-20 flex items-center justify-center mb-4">
+                                            <img src="https://placehold.co/200x80/transparent/222?text=Udemy"
+                                                alt="Udemy" class="partner-logo max-h-full object-contain">
+                                        </div>
+                                        <h3 class="font-bold text-lg">Udemy</h3>
+                                        <p class="text-sm mt-2" style="color: var(--color-muted)">
+                                            Training Partner
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Navigation and Pagination removed for Marquee effect -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Form Section -->
+    <section class="py-20" id="contact" style="background-color: rgba(255, 241, 209, 0.3)">
+        <div class="container mx-auto px-4">
+            <div class="max-w-8xl mx-auto">
+                <div class="text-center mb-16 contact-item">
+                    <div class="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        GET IN TOUCH
+                    </div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 split-text-target">
+                        Contact <span class="text-highlight-coral">Us</span>
+                    </h2>
+                    <p class="text-base md:text-lg max-w-2xl mx-auto" style="color: var(--color-muted)">
+                        Have questions? We'd love to hear from you. Send us a message and
+                        we'll respond as soon as possible.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Contact Information -->
+                    <div class="lg:col-span-1 space-y-6 contact-item">
+                        <div class="bg-white rounded-3xl shadow-card p-8 h-full">
+                            <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-12 h-12 bg-mint rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-1">Email</h4>
+                                        <a href="mailto:info@sofworld.com" class="text-sm"
+                                            style="color: var(--color-muted)">info@sofworld.com</a>
+                                        <br />
+                                        <a href="mailto:support@sofworld.com" class="text-sm"
+                                            style="color: var(--color-muted)">support@sofworld.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-12 h-12 bg-sky rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-1">Phone</h4>
+                                        <a href="tel:+911234567890" class="text-sm"
+                                            style="color: var(--color-muted)">+91 123 456 7890</a>
+                                        <br />
+                                        <a href="tel:+911234567891" class="text-sm"
+                                            style="color: var(--color-muted)">+91 123 456 7891</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-12 h-12 bg-coral rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                            </path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-1">Address</h4>
+                                        <p class="text-sm" style="color: var(--color-muted)">
+                                            Science Olympiad Foundation<br />
+                                            New Delhi, India<br />
+                                            110001
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 border-t" style="border-color: var(--color-border)">
+                                    <h4 class="font-semibold mb-3">Follow Us</h4>
+                                    <div class="flex gap-3">
+                                        <a href="#"
+                                            class="w-10 h-10 rounded-xl bg-mint/10 flex items-center justify-center hover:bg-mint hover:text-white transition-colors">
+                                            <span class="font-bold">f</span>
+                                        </a>
+                                        <a href="#"
+                                            class="w-10 h-10 rounded-xl bg-sky/10 flex items-center justify-center hover:bg-sky hover:text-white transition-colors">
+                                            <span class="font-bold">t</span>
+                                        </a>
+                                        <a href="#"
+                                            class="w-10 h-10 rounded-xl bg-coral/10 flex items-center justify-center hover:bg-coral hover:text-white transition-colors">
+                                            <span class="font-bold">i</span>
+                                        </a>
+                                        <a href="#"
+                                            class="w-10 h-10 rounded-xl bg-sunshine/10 flex items-center justify-center hover:bg-sunshine hover:text-white transition-colors">
+                                            <span class="font-bold">in</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="pricing-item text-white rounded-3xl p-8 shadow-card"
-                        style="background-color: var(--color-foreground);">
-                        <div class="text-3xl font-bold mb-2">PER MONTH FOR 1 USER</div>
-                    </div>
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-3xl shadow-card p-8 md:p-12 contact-item">
+                            <form id="contactForm" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-semibold mb-2">
+                                            Full Name <span class="text-coral">*</span>
+                                        </label>
+                                        <input type="text" id="name" name="name" required
+                                            class="w-full h-12 px-4 rounded-xl border-2 focus:outline-none focus:ring-2 focus:ring-mint transition-all"
+                                            style="border-color: var(--color-border)" placeholder="John Doe" />
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-semibold mb-2">
+                                            Email Address <span class="text-coral">*</span>
+                                        </label>
+                                        <input type="email" id="email" name="email" required
+                                            class="w-full h-12 px-4 rounded-xl border-2 focus:outline-none focus:ring-2 focus:ring-mint transition-all"
+                                            style="border-color: var(--color-border)"
+                                            placeholder="john.doe@example.com" />
+                                    </div>
+                                </div>
 
-                    <div class="pricing-item bg-coral text-white rounded-3xl p-8 shadow-card">
-                        <div class="text-3xl font-bold">TRY FOR FREE</div>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="phone" class="block text-sm font-semibold mb-2">
+                                            Phone Number <span class="text-coral">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required
+                                            class="w-full h-12 px-4 rounded-xl border-2 focus:outline-none focus:ring-2 focus:ring-mint transition-all"
+                                            style="border-color: var(--color-border)" placeholder="+91 123 456 7890" />
+                                    </div>
+                                    <div>
+                                        <label for="subject" class="block text-sm font-semibold mb-2">
+                                            Subject <span class="text-coral">*</span>
+                                        </label>
+                                        <select id="subject" name="subject" required
+                                            class="w-full h-12 px-4 rounded-xl border-2 focus:outline-none focus:ring-2 focus:ring-mint transition-all"
+                                            style="border-color: var(--color-border)">
+                                            <option value="">Select a subject</option>
+                                            <option value="general">General Inquiry</option>
+                                            <option value="olympiad">Olympiad Registration</option>
+                                            <option value="school">School Partnership</option>
+                                            <option value="support">Technical Support</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="message" class="block text-sm font-semibold mb-2">
+                                        Message <span class="text-coral">*</span>
+                                    </label>
+                                    <textarea id="message" name="message" rows="6" required
+                                        class="w-full px-4 py-3 rounded-xl border-2 focus:outline-none focus:ring-2 focus:ring-mint transition-all resize-none"
+                                        style="border-color: var(--color-border)"
+                                        placeholder="Tell us how we can help you..."></textarea>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <input type="checkbox" id="consent" name="consent" required
+                                        class="mt-1 w-5 h-5 rounded border-2 focus:ring-2 focus:ring-mint"
+                                        style="border-color: var(--color-border)" />
+                                    <label for="consent" class="text-sm" style="color: var(--color-muted)">
+                                        I agree to receive communications and agree to the
+                                        <a href="#" class="text-mint hover:underline font-semibold">Privacy Policy</a>
+                                        <span class="text-coral">*</span>
+                                    </label>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full btn-primary text-lg py-4 rounded-xl font-semibold hover:shadow-lg transition-all">
+                                    <span class="flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                        </svg>
+                                        Send Message
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -766,39 +1447,48 @@
     </section>
 
     <!-- Footer CTA -->
-    <footer class="border-t" style="border-color: var(--color-border);">
+    <footer class="border-t" style="border-color: var(--color-border)">
         <div class="container mx-auto px-4 py-20">
             <div class="max-w-3xl mx-auto text-center space-y-8">
-                <h2 class="text-4xl md:text-6xl font-bold">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">
                     Start <span class="bg-sunshine px-3 rounded-lg">trying now!</span>
                 </h2>
-                <p style="color: var(--color-muted);">IT CAN BE MORE ACTIVE & FASTER</p>
+                <p style="color: var(--color-muted)">
+                    IT CAN BE MORE ACTIVE & FASTER
+                </p>
                 <div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto items-center">
                     <input type="email" placeholder="Email address" class="flex-1 h-12 px-4 rounded-full border-2"
-                        style="border-color: var(--color-border);">
+                        style="border-color: var(--color-border)" />
                     <button class="btn-primary whitespace-nowrap">Register Now</button>
                 </div>
             </div>
         </div>
 
         <!-- Footer Links -->
-        <div class="border-t" style="border-color: var(--color-border);">
+        <div class="border-t" style="border-color: var(--color-border)">
             <div class="container mx-auto px-4 py-12">
-                <div class="grid md:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                     <div>
                         <div class="flex items-center gap-2 mb-6">
-                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl"
-                                style="background: linear-gradient(135deg, var(--color-coral), var(--color-sunshine));">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl" style="
+                    background: linear-gradient(
+                      135deg,
+                      var(--color-coral),
+                      var(--color-sunshine)
+                    );
+                  ">
                                 📚
                             </div>
                             <span class="text-xl font-bold">Studiez</span>
                         </div>
-                        <p class="text-sm" style="color: var(--color-muted);">© 2024 Studiez. All rights reserved.</p>
+                        <p class="text-sm" style="color: var(--color-muted)">
+                            © 2024 Studiez. All rights reserved.
+                        </p>
                     </div>
 
                     <div>
                         <h3 class="font-bold mb-4">Company</h3>
-                        <ul class="space-y-2 text-sm" style="color: var(--color-muted);">
+                        <ul class="space-y-2 text-sm" style="color: var(--color-muted)">
                             <li><a href="#" class="hover:opacity-70">About</a></li>
                             <li><a href="#" class="hover:opacity-70">Our Team</a></li>
                             <li><a href="#" class="hover:opacity-70">Careers</a></li>
@@ -808,7 +1498,7 @@
 
                     <div>
                         <h3 class="font-bold mb-4">Support</h3>
-                        <ul class="space-y-2 text-sm" style="color: var(--color-muted);">
+                        <ul class="space-y-2 text-sm" style="color: var(--color-muted)">
                             <li><a href="#" class="hover:opacity-70">FAQs</a></li>
                             <li><a href="#" class="hover:opacity-70">Support Center</a></li>
                             <li><a href="#" class="hover:opacity-70">Security</a></li>
@@ -820,22 +1510,22 @@
                         <div class="flex gap-4">
                             <a href="#"
                                 class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-coral transition-colors"
-                                style="background-color: rgba(229, 225, 216, 0.5);">
+                                style="background-color: rgba(229, 225, 216, 0.5)">
                                 <span>f</span>
                             </a>
                             <a href="#"
                                 class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-sky transition-colors"
-                                style="background-color: rgba(229, 225, 216, 0.5);">
+                                style="background-color: rgba(229, 225, 216, 0.5)">
                                 <span>t</span>
                             </a>
                             <a href="#"
                                 class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-mint transition-colors"
-                                style="background-color: rgba(229, 225, 216, 0.5);">
+                                style="background-color: rgba(229, 225, 216, 0.5)">
                                 <span>i</span>
                             </a>
                             <a href="#"
                                 class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-coral transition-colors"
-                                style="background-color: rgba(229, 225, 216, 0.5);">
+                                style="background-color: rgba(229, 225, 216, 0.5)">
                                 <span>y</span>
                             </a>
                         </div>
@@ -846,6 +1536,10 @@
     </footer>
 
     <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
     <script src="assest/js/script.js"></script>
 </body>
 
