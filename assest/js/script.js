@@ -137,4 +137,344 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Split text hero animation
+  if (window.SplitType) {
+    document.querySelectorAll('.split-text-target').forEach((target) => {
+
+      const splitInstance = new SplitType(target, { types: 'words, chars' });
+
+      gsap.from(splitInstance.chars, {
+        opacity: 0,
+        y: 30,
+        duration: 0.3,
+        ease: 'back.in',
+        stagger: 0.02,
+        scrollTrigger: {
+          trigger: target,
+          start: 'top 80%',
+        }
+      });
+    });
+  }
+
+  // Partners Section - Swiper Initialization
+  const partnersSwiper = new Swiper('.partnersSwiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: false, // Continuous scroll
+    },
+    speed: 5000, // Slow linear speed
+    allowTouchMove: false, // Optional: prevent user interaction for pure marquee
+    cssMode: false, // Ensure JS animation for smoothness
+
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+    navigation: false, // Disables navigation arrows
+    pagination: false, // Disables pagination
+    on: {
+      init: function () {
+        // Animate slides on init
+        gsap.from('.swiper-slide', {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out'
+        });
+      }
+    }
+  });
+
+  // Partners Section - GSAP Animations
+  const partnerItems = document.querySelectorAll('.partner-item');
+  if (partnerItems.length > 0) {
+    gsap.from(partnerItems, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#partners',
+        start: 'top 75%',
+        toggleActions: 'play none none none'
+      }
+    });
+  }
+
+  // Animate partner cards on slide change
+  partnersSwiper.on('slideChange', function () {
+    const activeSlides = document.querySelectorAll('.swiper-slide-active, .swiper-slide-next, .swiper-slide-prev');
+    activeSlides.forEach((slide, index) => {
+      gsap.fromTo(slide.querySelector('.partner-card'),
+        {
+          scale: 0.9,
+          opacity: 0.7
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.5,
+          delay: index * 0.1,
+          ease: 'power2.out'
+        }
+      );
+    });
+  });
+
+  // Testimonials Section - Swiper Initialization
+  const testimonialsSwiper = new Swiper('.testimonialsSwiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    speed: 800,
+
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 24,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+    navigation: {
+      nextEl: '.testimonial-nav.swiper-button-next',
+      prevEl: '.testimonial-nav.swiper-button-prev',
+    },
+    pagination: {
+      el: '.testimonial-pagination',
+      clickable: true,
+      dynamicBullets: true,
+    },
+    on: {
+
+    }
+  });
+
+  // Testimonials Section - GSAP Animations
+  const testimonialItems = document.querySelectorAll('.testimonial-item');
+  if (testimonialItems.length > 0) {
+    gsap.from(testimonialItems, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#testimonials',
+        start: 'top 75%',
+        toggleActions: 'play none none none'
+      }
+    });
+  }
+
+  // Animate testimonial cards on slide change with enhanced effects
+  testimonialsSwiper.on('slideChange', function () {
+    const activeSlides = document.querySelectorAll('.testimonialsSwiper .swiper-slide-active, .testimonialsSwiper .swiper-slide-next, .testimonialsSwiper .swiper-slide-prev');
+
+    activeSlides.forEach((slide, index) => {
+      const card = slide.querySelector('.testimonial-card');
+      const stars = slide.querySelectorAll('.star-icon');
+
+      // Animate card
+      gsap.fromTo(card,
+        {
+          scale: 0.95,
+          opacity: 0.8
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.5,
+          delay: index * 0.1,
+          ease: 'power2.out'
+        }
+      );
+
+      // Animate stars sequentially
+      gsap.fromTo(stars,
+        {
+          scale: 0,
+          opacity: 0
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          stagger: 0.05,
+          delay: index * 0.1 + 0.2,
+          ease: 'back.out(1.7)'
+        }
+      );
+    });
+
+    // Add subtle bounce to active slide
+    const activeSlide = document.querySelector('.testimonialsSwiper .swiper-slide-active');
+    if (activeSlide) {
+      gsap.to(activeSlide, {
+        y: -5,
+        duration: 0.3,
+        yoyo: true,
+        repeat: 1,
+        ease: 'power1.inOut'
+      });
+    }
+  });
+
+  // Hover effect for testimonial cards
+  document.querySelectorAll('.testimonial-card').forEach(card => {
+    card.addEventListener('mouseenter', function () {
+      gsap.to(this, {
+        y: -8,
+        scale: 1.02,
+        boxShadow: '0 20px 60px -8px rgba(0, 0, 0, 0.2)',
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+
+      // Glow effect on stars
+      const stars = this.querySelectorAll('.star-icon');
+      gsap.to(stars, {
+        scale: 1.1,
+        duration: 0.2,
+        stagger: 0.03,
+        ease: 'power1.out'
+      });
+    });
+
+    card.addEventListener('mouseleave', function () {
+      gsap.to(this, {
+        y: 0,
+        scale: 1,
+        boxShadow: '0 8px 32px -4px rgba(0, 0, 0, 0.1)',
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+
+      const stars = this.querySelectorAll('.star-icon');
+      gsap.to(stars, {
+        scale: 1,
+        duration: 0.2,
+        stagger: 0.03,
+        ease: 'power1.out'
+      });
+    });
+  });
+
+  // Contact form animations
+  const contactItems = document.querySelectorAll('.contact-item');
+  if (contactItems.length > 0) {
+    gsap.from(contactItems, {
+      opacity: 1,
+      y: 30,
+      duration: 0.2,
+      stagger: 1,
+      scrollTrigger: {
+        trigger: '#contact',
+        start: 'top 5%'
+      }
+    });
+  }
+
+  // Contact form submission
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+
+      // Simple validation
+      if (!data.name || !data.email || !data.phone || !data.subject || !data.message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      // Show success message (in a real application, you would send this to a server)
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitButton.innerHTML;
+
+      submitButton.innerHTML = '<span class="flex items-center justify-center gap-2"><svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...</span>';
+      submitButton.disabled = true;
+
+      // Simulate form submission (replace with actual API call)
+      setTimeout(() => {
+        alert('Thank you for contacting us! We will get back to you soon.');
+        contactForm.reset();
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+      }, 1500);
+    });
+  }
 });
+
+
+const track = document.querySelector(".marquee-track");
+const trackWidth = track.offsetWidth;
+
+gsap.to(track, {
+  x: `-${trackWidth / 2}px`,
+  ease: "none",
+  duration: 50,  // speed (lower = faster)
+  repeat: -1
+});
+
+// Horizontal Scroll Section Animation
+const showcaseSection = document.querySelector('#showcase-section');
+const showcaseWrapper = document.querySelector('.showcase-wrapper');
+const showcaseTrack = document.querySelector('.showcase-track');
+
+if (showcaseSection && showcaseWrapper && showcaseTrack) {
+  // Calculate the total width to scroll
+  // Total width of track - viewport width + some padding
+  const getScrollAmount = () => {
+    let trackWidth = showcaseTrack.scrollWidth;
+    return -(trackWidth - window.innerWidth);
+  };
+
+  const tween = gsap.to(showcaseTrack, {
+    x: getScrollAmount,
+    ease: "none",
+  });
+
+  ScrollTrigger.create({
+    trigger: "#showcase-section",
+    start: "top top",
+    end: () => `+=${getScrollAmount() * -1}`, // Scroll distance based on content width
+    pin: true,
+    animation: tween,
+    scrub: 1,
+    invalidateOnRefresh: true, // Recalculate on resize
+    // markers: true // Uncomment for debugging
+  });
+}
