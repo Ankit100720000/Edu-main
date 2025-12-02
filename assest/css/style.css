@@ -496,6 +496,7 @@ body {
 .showcase-item {
     /* Dimensions handled by Tailwind classes in HTML, but ensuring flex behavior */
     flex-shrink: 0;
+    <<<<<<< HEAD
 }
 
 /* Custom Cursor */
