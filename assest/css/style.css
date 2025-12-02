@@ -1,0 +1,541 @@
+/* @font-face {
+            font-family: oswald-bold;
+            src: url(../font/Oswald-Bold.ttf);
+           }
+           @font-face {
+            font-family: oswald;
+            src: url(../font/Oswald-Regular.ttf);
+           }
+            @font-face {
+            font-family: oswald-light;
+            src: url(../font/Oswald-Light.ttf);
+           } */
+
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-background: #F5F3EE;
+    --color-foreground: #1F1F23;
+    --color-coral: #FF6B5A;
+    --color-mint: #5DD4B4;
+    --color-sunshine: #FFE66D;
+    --color-sky: #6B9EFF;
+    --color-muted: #8A8A8A;
+    --color-border: #E5E1D8;
+}
+
+html,
+body {
+    font-family: "Familjen Grotesk", sans-serif;
+    /* background-color: var(--color-background); */
+    color: var(--color-foreground);
+    overflow-x: hidden;
+    scroll-behavior: auto;
+}
+
+.text-highlight-coral {
+    background-color: rgba(255, 107, 90, 0.2);
+    padding: 0 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.text-highlight-mint {
+    background-color: rgba(93, 212, 180, 0.2);
+    padding: 0 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.text-highlight-sunshine {
+    background-color: rgba(255, 230, 109, 0.3);
+    padding: 0 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.bg-coral {
+    background: linear-gradient(135deg, var(--color-coral), #FF8F82);
+}
+
+.bg-mint {
+    background: linear-gradient(135deg, var(--color-mint), #84EBD0);
+}
+
+.bg-sunshine {
+    background: linear-gradient(135deg, var(--color-sunshine), #FFEF9A);
+}
+
+.bg-sky {
+    background: linear-gradient(135deg, var(--color-sky), #8CB5FF);
+}
+
+.text-coral {
+    color: var(--color-coral);
+}
+
+.border-coral {
+    border-color: var(--color-coral);
+}
+
+.shadow-card {
+    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.1);
+}
+
+.floating-badge {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        min-height: 105vh;
+    }
+}
+
+.underline-svg {
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 8px;
+}
+
+.course-card {
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-foreground);
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    border: 2px solid var(--color-foreground);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+}
+
+.btn-coral {
+    background-color: var(--color-coral);
+    color: white;
+}
+
+.btn-sky {
+    background-color: var(--color-sky);
+    color: white;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.star-icon {
+    width: 16px;
+    height: 16px;
+    /* fill: var(--color-sunshine); */
+}
+
+.check-icon {
+    width: 16px;
+    height: 16px;
+    color: white;
+}
+
+.gallery-item {
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+    position: relative;
+}
+
+/* .gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+} */
+
+.gallery-item img {
+    transition: transform 0.5s ease;
+}
+
+/* Fallback to ensure gallery tiles have height even if aspect utilities are missing */
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+.gallery-grid {
+    grid-auto-rows: minmax(200px, auto);
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-auto-rows: minmax(250px, auto);
+    }
+}
+
+.award-card {
+    transition: all 0.3s ease;
+}
+
+.award-card:hover {
+    transform: translateY(-8px);
+}
+
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+}
+
+.about-card {
+    backdrop-filter: blur(30px);
+    background: rgba(255, 255, 255, 0.8);
+    transition: 0.3s ease-in;
+}
+
+.about-card:hover {
+    transform: scale(1.01);
+
+}
+
+.hero-text {
+    line-height: 1.3 !important;
+}
+
+/* Contact Form Styles */
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm input[type="tel"],
+#contactForm select,
+#contactForm textarea {
+    transition: all 0.3s ease;
+}
+
+#contactForm input:focus,
+#contactForm select:focus,
+#contactForm textarea:focus {
+    border-color: var(--color-mint) !important;
+    box-shadow: 0 0 0 3px rgba(93, 212, 180, 0.1);
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+    color: var(--color-muted);
+    opacity: 0.6;
+}
+
+#contactForm select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231F1F23' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+#contactForm input[type="checkbox"] {
+    accent-color: var(--color-mint);
+    cursor: pointer;
+}
+
+#contactForm label {
+    cursor: pointer;
+}
+
+.contact-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+#contactForm button[type="submit"]:hover {
+    box-shadow: 0 8px 24px -4px rgba(31, 31, 35, 0.2);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Partners Section Styles */
+.partnersSwiper {
+    padding: 2rem 0 4rem 0;
+    overflow: visible;
+}
+
+.partner-card {
+    transition: all 0.3s ease;
+    min-height: 200px;
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+}
+
+.partner-nav {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: var(--color-foreground);
+    transition: all 0.3s ease;
+}
+
+.partner-nav:hover {
+    background: var(--color-mint);
+    color: white;
+    transform: scale(1.1);
+}
+
+.partner-nav::after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.partner-pagination {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.partner-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: var(--color-border);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.partner-pagination .swiper-pagination-bullet-active {
+    background: var(--color-mint);
+    width: 32px;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .partnersSwiper {
+        padding: 1rem 0 3rem 0;
+    }
+
+    .partner-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .partner-nav::after {
+        font-size: 16px;
+    }
+}
+
+.partner-logo {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+}
+
+.partner-card:hover .partner-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Testimonials Slider Styles */
+.testimonialsSwiper {
+    padding: 2rem 0 4rem 0;
+    overflow: visible;
+}
+
+.testimonialsSwiper .swiper-slide {
+    height: auto;
+}
+
+.testimonial-nav {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: var(--color-foreground);
+    transition: all 0.3s ease;
+}
+
+.testimonial-nav:hover {
+    background: var(--color-mint);
+    color: white;
+    transform: scale(1.1);
+}
+
+.testimonial-nav::after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.testimonial-pagination {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.testimonial-pagination .swiper-pagination-bullet {
+    width: 22px;
+    height: 12px;
+    background: var(--color-border);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.testimonial-pagination .swiper-pagination-bullet-active {
+    background: var(--color-mint);
+    width: 32px;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .testimonialsSwiper {
+        padding: 1rem 0 3rem 0;
+    }
+
+    .testimonial-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .testimonial-nav::after {
+        font-size: 16px;
+    }
+}
+
+.stroke-text {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #A249ED;
+}
+
+/* Horizontal Scroll Section */
+#showcase-section {
+    position: relative;
+    /* Ensure it has enough height for the scroll to happen if we weren't pinning, 
+       but with pinning, the height is controlled by the scroll duration */
+}
+
+.showcase-wrapper {
+    /* This will be pinned */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.showcase-track {
+    display: flex;
+    gap: 40px;
+    padding-left: 5vw;
+    /* Start with some offset */
+    padding-right: 5vw;
+}
+
+.showcase-item {
+    /* Dimensions handled by Tailwind classes in HTML, but ensuring flex behavior */
+    flex-shrink: 0;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    /* Fallback */
+    background-color: var(--color-foreground);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    /* Fallback */
+    border: 1px solid var(--color-foreground);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.cursor-hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+}
+
+body {
+    /* Optional: Hide default cursor if custom cursor is robust */
+    /* cursor: none; */
+}
