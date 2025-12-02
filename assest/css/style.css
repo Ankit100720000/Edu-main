@@ -196,6 +196,7 @@ body {
 }
 
 .gallery-item {
+    <<<<<<< HEAD
     /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
     position: relative;
 }
@@ -205,8 +206,18 @@ body {
     box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.15);
     z-index: 10;
 } */
+=======transition: transform 0.3s ease,
+box-shadow 0.3s ease;
+position: relative;
+}
 
-.gallery-item img {
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+>>>>>>>2155a8a2ed241e94b5d43a6c074aeed58c20eecf .gallery-item img {
     transition: transform 0.5s ease;
 }
 
@@ -539,4 +550,5 @@ body {
 body {
     /* Optional: Hide default cursor if custom cursor is robust */
     /* cursor: none; */
+    =======>>>>>>>2155a8a2ed241e94b5d43a6c074aeed58c20eecf
 }
