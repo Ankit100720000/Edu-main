@@ -196,7 +196,6 @@ body {
 }
 
 .gallery-item {
-    <<<<<<< HEAD
     /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
     position: relative;
 }
@@ -206,18 +205,8 @@ body {
     box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.15);
     z-index: 10;
 } */
-=======transition: transform 0.3s ease,
-box-shadow 0.3s ease;
-position: relative;
-}
 
-.gallery-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.15);
-    z-index: 10;
-}
-
->>>>>>>2155a8a2ed241e94b5d43a6c074aeed58c20eecf .gallery-item img {
+.gallery-item img {
     transition: transform 0.5s ease;
 }
 
@@ -507,48 +496,4 @@ position: relative;
 .showcase-item {
     /* Dimensions handled by Tailwind classes in HTML, but ensuring flex behavior */
     flex-shrink: 0;
-    <<<<<<< HEAD
-}
-
-/* Custom Cursor */
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background-color: #000;
-    /* Fallback */
-    background-color: var(--color-foreground);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-}
-
-.cursor-follower {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #000;
-    /* Fallback */
-    border: 1px solid var(--color-foreground);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
-}
-
-.cursor-hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-color: transparent;
-}
-
-body {
-    /* Optional: Hide default cursor if custom cursor is robust */
-    /* cursor: none; */
-    =======>>>>>>>2155a8a2ed241e94b5d43a6c074aeed58c20eecf
 }
